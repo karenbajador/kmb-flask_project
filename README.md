@@ -1,7 +1,10 @@
 # Flask Skeleton
 
+<<<<<<< HEAD
 Add a nonsense line
 
+=======
+>>>>>>> c2fa3d143a23175381f2f0795233e41c9281a8fc
 Flask starter project...
 
 [![Build Status](https://travis-ci.org/realpython/flask-skeleton.svg?branch=master)](https://travis-ci.org/realpython/flask-skeleton)
