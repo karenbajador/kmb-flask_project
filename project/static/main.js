@@ -42,5 +42,10 @@ $(document).ready( function() {
 	});	
 
 
+	$('input[type=file]').change(function(){
+		console.log("uhuuu")
+	})	
+
+
 
 });

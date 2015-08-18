@@ -20,6 +20,8 @@ class DevelopmentConfig(BaseConfig):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'dev.sqlite')
     DEBUG_TB_ENABLED = True
 
+    CACHE_TYPE = "null"
+
 
 class TestingConfig(BaseConfig):
     """Testing configuration."""

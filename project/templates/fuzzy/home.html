@@ -27,7 +27,7 @@
             
                 <!-- <span class="input-group-btn"> -->
                     <!-- <span class="btn btn-primary btn-file"> -->
-                        <input id="fileupload" type="file" multiple="">
+                        <input id="fuzzy-fileupload" type="file" multiple="">
                     <!-- </span> -->
                 <!-- </span> -->
                 <!-- <input type="text" class="form-control" readonly=""> -->
@@ -41,11 +41,17 @@
 			  <!-- Default panel contents -->
 			  			  
 			  <!-- Table -->
-			  <table class="table">
-			    <tr><th>#</th><th>File Name</th><th>Country</th><th>Territory</th><th>Result</th></tr>
-			    <tr><td>1</td><td>Abu Dhabi.csv</td><td>Country</td><td>Territory</td><td>Result</td></tr>
-			    <tr><td>2</td><td>Dubai.csv</td><td>Country</td><td>Territory</td><td>Result</td></tr>
-			  </table>
+			  {%
+
+			  	set files = ["File1.csv","File2.csv"]
+               	
+
+			  %}
+			  {% include 'fuzzy/files_selected.html' %}
+
+			  <div id="fuzzy-selectedfiles">
+			  </div>
+
 			</div>
 
 			<p><a class="btn btn-primary btn-sm" href="#" role="button">Run Fuzzy!</a> <a class="btn btn-primary btn-sm" href="#" role="button">Cancel</a></p>
