@@ -1,0 +1,63 @@
+{% extends "_home.html" %}
+
+{% block content %}
+
+
+<div class="body-content">
+  <div class="row">
+    <!-- <h1>Welcome!</h1> -->
+	<ul class="nav nav-tabs">
+	  <li role="presentation" class="active"><a href="#">Home</a></li>
+	</ul>
+
+
+	<div class="panel panel-default">
+
+
+
+		 <div class="panel-body">
+
+		 Home > Fuzzy Match	
+	 
+		<h1>Fuzzy Match</h1>
+
+		    <div class="col-lg-6 col-sm-6 col-12">
+            <h4>Upload spreadsheet</h4>
+            <div class="input-group">
+            
+                <!-- <span class="input-group-btn"> -->
+                    <!-- <span class="btn btn-primary btn-file"> -->
+                        <input id="fileupload" type="file" multiple="">
+                    <!-- </span> -->
+                <!-- </span> -->
+                <!-- <input type="text" class="form-control" readonly=""> -->
+            
+            </div>
+            <span class="help-block">
+                <!-- Try selecting one or more files and watch the feedback -->
+            </span>
+
+			<div class="panel panel-default">
+			  <!-- Default panel contents -->
+			  			  
+			  <!-- Table -->
+			  <table class="table">
+			    <tr><th>#</th><th>File Name</th><th>Country</th><th>Territory</th><th>Result</th></tr>
+			    <tr><td>1</td><td>Abu Dhabi.csv</td><td>Country</td><td>Territory</td><td>Result</td></tr>
+			    <tr><td>2</td><td>Dubai.csv</td><td>Country</td><td>Territory</td><td>Result</td></tr>
+			  </table>
+			</div>
+
+			<p><a class="btn btn-primary btn-sm" href="#" role="button">Run Fuzzy!</a> <a class="btn btn-primary btn-sm" href="#" role="button">Cancel</a></p>
+
+        </div>
+
+		</div>
+
+	</div>	
+
+
+  </div>
+</div>
+
+{% endblock %}
