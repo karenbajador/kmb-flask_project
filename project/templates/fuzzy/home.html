@@ -3,7 +3,8 @@
 {% block content %}
 
 
-<div class="body-content">
+<!-- <div class="body-content"> -->
+	<div class="body-content" ng-app="fuzzy" ng-controller="fuzzyController as fuzzy">
   <div class="row">
     <!-- <h1>Welcome!</h1> -->
 	<ul class="nav nav-tabs">
@@ -27,7 +28,14 @@
             
                 <!-- <span class="input-group-btn"> -->
                     <!-- <span class="btn btn-primary btn-file"> -->
-                        <input id="fuzzy-fileupload" type="file" multiple="">
+                        <input id="fuzzy-fileupload" type="file" multiple="" ngf-select="fuzzy.uploadFiles($files)">
+                        <!-- <input id="fuzzy-fileupload" type="file" multiple=""> -->
+                          
+                          <!-- ## angular!
+                          <button type="file" ngf-select="uploadFiles($files)" multiple
+          accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
+      Select Files</button> -->
+
                     <!-- </span> -->
                 <!-- </span> -->
                 <!-- <input type="text" class="form-control" readonly=""> -->
@@ -41,16 +49,16 @@
 			  <!-- Default panel contents -->
 			  			  
 			  <!-- Table -->
-			  {%
 
-			  	set files = ["File1.csv","File2.csv"]
-               	
-
-			  %}
 			  {% include 'fuzzy/files_selected.html' %}
 
-			  <div id="fuzzy-selectedfiles">
-			  </div>
+
+
+			  {{errorMsg}} 
+
+
+		<!-- 	  <div id="fuzzy-selectedfiles">
+			  </div> -->
 
 			</div>
 

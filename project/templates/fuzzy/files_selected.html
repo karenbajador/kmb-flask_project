@@ -1,17 +1,21 @@
-<table class="table">
-    
-    {% if files %}
+{% raw %}
 
+<table  ng-if="fuzzy.filesNotEmpty" class="table">
+
+   
     <tr><th>#</th><th>File Name</th><th>Country</th><th>Territory</th><th>Result</th></tr>
 
-    {% for file in files %}
 
-    <tr><td>#</td><td>{{ file }}</td><td>Country</td><td>Territory</td><td></td></tr>
-    
-
-    {% endfor %}
-
-    {% endif %}
-
+	<tr ng-repeat="f in fuzzy.files">
+		<td>{{ $index + 1 }}</td>
+		<td>{{ f.name }} {{f.$error}} {{f.$errorParam}}</td>
+	   	<td>
+			  Country
+		</td>
+		<td>Territory</td>
+		<td> </td>
+	</tr>
 
 </table>
+
+{% endraw %}
