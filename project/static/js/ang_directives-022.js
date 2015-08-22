@@ -25,7 +25,24 @@ app.controller('fuzzyController',  function () {
         this.files = files;
         this.filesNotEmpty = this.files;
 
-    }   
+    }
+
+    
+    this.countries = [
+                {"country_code":"ae", "country_name":"United Arab Emirates"}, 
+                {"country_code":"sa", "country_name":"Saudi Arabia"}, 
+                {"country_code":"om", "country_name":"Oman"}, 
+            ]
+
+    this.territories = [
+                {"id":"x", "name":"Abu Dhabi"}, 
+                {"id":"e", "name":"Dubai"}, 
+                {"id":"r", "name":"Jeddah"},
+                {"id":"r", "name":"Riyadh"}, 
+                {"id":"r", "name":"Eastern Province"},
+                {"id":"r", "name":"Oman"},  
+            ]            
+       
 });
 
 
