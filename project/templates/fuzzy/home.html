@@ -25,6 +25,8 @@
 		    <!-- <div class="col-lg-6 col-sm-6 col-12"> -->
 		    <div>
             <h4>Upload spreadsheet</h4>
+            <form id="frmFuzzy" role="form" ng-submit="fuzzy.uploadAndMatch()">
+
             <div class="input-group">
             
                 <!-- <span class="input-group-btn"> -->
@@ -53,17 +55,21 @@
 
 			  {% include 'fuzzy/files_selected.html' %}
 
+				{{errorMsg}} 
 
-
-			  {{errorMsg}} 
+			  
 
 
 		<!-- 	  <div id="fuzzy-selectedfiles">
 			  </div> -->
 
 			</div>
-
-			<p><a class="btn btn-primary btn-sm" href="#" role="button">Run Fuzzy!</a> <a class="btn btn-primary btn-sm" href="#" role="button">Cancel</a></p>
+                {% raw %}
+                
+                <button type="submit" class="btn btn-primary" ng-disabled="fuzzy.btn_fuzzy_disabled">Run Fuzzy!</button>
+                <button type="cancel" class="btn btn-primary" ng-disabled="fuzzy.btn_cancel_disabled">Cancel</button>
+                {% endraw %}
+             </form>
 
         </div>
 

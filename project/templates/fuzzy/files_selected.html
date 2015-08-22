@@ -1,5 +1,7 @@
 {% raw %}
 
+
+
 <table  ng-if="fuzzy.filesNotEmpty" class="table">
 
    
@@ -11,7 +13,7 @@
 		<td>{{ f.name }} {{f.$error}} {{f.$errorParam}}</td>
 	   	<td>
              
-              <select>
+              <select id="{{ $index }}_country" ng-model="fuzzylist.country" >
                   <option value="">-- Select Country --</option>
                   <option data-ng-repeat="country in fuzzy.countries" value="{{country.country_code}}">{{country.country_name}}</option>
               </select>
@@ -19,7 +21,7 @@
 		</td>
 		<td>
 
-              <select>
+              <select id="{{ $index }}_territory" ng-model="fuzzylist.territory">
                   <option value="">-- Select Territory --</option>
                   <option data-ng-repeat="territory in fuzzy.territories" value="{{territory.id}}">{{territory.name}}</option>
               </select>
