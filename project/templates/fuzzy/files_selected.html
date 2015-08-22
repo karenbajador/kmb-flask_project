@@ -10,10 +10,24 @@
 		<td>{{ $index + 1 }}</td>
 		<td>{{ f.name }} {{f.$error}} {{f.$errorParam}}</td>
 	   	<td>
-			  Country
+             
+              <select>
+                  <option value="">-- Select Country --</option>
+                  <option data-ng-repeat="country in fuzzy.countries" value="{{country.country_code}}">{{country.country_name}}</option>
+              </select>
+              
 		</td>
-		<td>Territory</td>
-		<td> </td>
+		<td>
+
+              <select>
+                  <option value="">-- Select Territory --</option>
+                  <option data-ng-repeat="territory in fuzzy.territories" value="{{territory.id}}">{{territory.name}}</option>
+              </select>
+
+		</td>
+		<td> 
+			Uploading..10%/Finding Match..0%/Show Excel Button
+		</td>
 	</tr>
 
 </table>
