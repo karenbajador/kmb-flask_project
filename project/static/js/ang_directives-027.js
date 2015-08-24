@@ -1,27 +1,9 @@
-// (function () {
+(function () {
 
-//   angular.module('fuzzy', ['ngFileUpload'])
-//   .controller("fuzzyController", ['$scope', 'Upload', '$timeout',   function ('$scope', Upload, '$timeout') {
-//       $scope.uploadFiles = function(files) {
-//         angular.forEach(files, function(file){
-//           console.log(file);
-//         });
-//       }
+  angular.module('fuzzy', ['ngFileUpload'])
+  .controller("fuzzyController", fuzzyController);
 
-//   }]);
-
-
-
-
-// }());
-
-
-//inject angular file upload directives and services.
-var app = angular.module('fuzzy', ['ngFileUpload']);
-
-
-app.controller('fuzzyController',  function () {
-
+  function fuzzyController() {
     this.btn_fuzzy_disabled= true;
     this.btn_cancel_disabled = true;
     
@@ -34,9 +16,9 @@ app.controller('fuzzyController',  function () {
 
     
     this.uploadAndMatch = function(fuzzylist) {
-        console.log("^^^^^^^^^^^^^");
-        console.log(fuzzylist.country);
-        console.log("^^^^^^^^^^^^^");
+        console.log("^^^^^^^^^^^^^@@");
+        console.log(fuzzylist);
+        console.log("^^^^^^^^^^^^^@@");
     }
 
     
@@ -54,12 +36,6 @@ app.controller('fuzzyController',  function () {
                 {"id":"r", "name":"Eastern Province"},
                 {"id":"r", "name":"Oman"},  
             ]
+  }
 
-
-         
-       
-});
-
-
-
-   
+}());
