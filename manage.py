@@ -7,6 +7,7 @@ import coverage
 
 from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
+from flask_collect import Collect
 
 COV = coverage.coverage(
         branch=True,
@@ -19,8 +20,10 @@ from project import app, db
 from project.models import User
 
 
+
 migrate = Migrate(app, db)
 manager = Manager(app)
+
 
 # migrations
 manager.add_command('db', MigrateCommand)
@@ -76,6 +79,13 @@ def create_admin():
 def create_data():
     """Creates sample data."""
     pass
+
+
+@manager.command
+def collect():
+    """Collect Static Files"""
+    collect = Collect(app)
+    collect.collect(verbose=True)
 
 
 if __name__ == '__main__':
