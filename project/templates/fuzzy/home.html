@@ -25,53 +25,40 @@
 		    <!-- <div class="col-lg-6 col-sm-6 col-12"> -->
 		    <div>
             <h4>Upload spreadsheet</h4>
-            <form id="frmFuzzy" role="form" ng-submit="fuzzy.uploadAndMatch()">
+            <form id="frmFuzzy" name="frmFuzzy" role="form" ng-submit="fuzzy.uploadAndMatch()">
 
             <div class="input-group">
-            
-                <!-- <span class="input-group-btn"> -->
-                    <!-- <span class="btn btn-primary btn-file"> -->
-                        <input id="fuzzy-fileupload" type="file" multiple="" ngf-select="fuzzy.uploadFiles($files)">
-                        <!-- <input id="fuzzy-fileupload" type="file" multiple=""> -->
-                          
-                          <!-- ## angular!
-                          <button type="file" ngf-select="uploadFiles($files)" multiple
-          accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
-      Select Files</button> -->
-
-                    <!-- </span> -->
-                <!-- </span> -->
-                <!-- <input type="text" class="form-control" readonly=""> -->
-            
+                <input id="fuzzy_files" name="fuzzy_files" type="file" multiple="" ngf-select="fuzzy.uploadFiles($files)" ng-model="fuzzy.filesToUpload">
+    
             </div>
             <span class="help-block">
                 <!-- Try selecting one or more files and watch the feedback -->
             </span>
 
-			<div class="panel panel-default">
-			  <!-- Default panel contents -->
-			  			  
-			  <!-- Table -->
+      			 <div>
+             <div class="col-lg-10 col-md-10 col-sm-10">
+      			  {% include 'fuzzy/files_selected.html' %}
+      				{{errorMsg}} 
+              </div>
+      			
 
-			  {% include 'fuzzy/files_selected.html' %}
+              <div class="col-lg-2 col-md-2 col-sm-2" ng-if="fuzzy.filesNotEmpty">
+            {% raw %}
+            <button type="submit" class="btn btn-primary" ng-disabled="fuzzy.btn_fuzzy_disabled || frmFuzzy.$invalid">Run Fuzzy!</button>
+            <br/><br/>
+            <button type="cancel" class="btn btn-primary" ng-disabled="fuzzy.btn_cancel_disabled">Cancel</button>
 
-				{{errorMsg}} 
 
-			  
+            {% endraw %}
+            
+              </div>
+            </div>
 
 
-		<!-- 	  <div id="fuzzy-selectedfiles">
-			  </div> -->
-
-			</div>
-                {% raw %}
-                
-                <button type="submit" class="btn btn-primary" ng-disabled="fuzzy.btn_fuzzy_disabled">Run Fuzzy!</button>
-                <button type="cancel" class="btn btn-primary" ng-disabled="fuzzy.btn_cancel_disabled">Cancel</button>
-                {% endraw %}
              </form>
 
         </div>
+
 
 		</div>
 
@@ -82,3 +69,6 @@
 </div>
 
 {% endblock %}
+
+
+

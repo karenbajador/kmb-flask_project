@@ -1,36 +1,52 @@
 {% raw %}
 
+<div class="panel panel-default" ng-if="fuzzy.filesNotEmpty">
 
-
-<table  ng-if="fuzzy.filesNotEmpty" class="table">
+<table class="table">
 
    
     <tr><th>#</th><th>File Name</th><th>Country</th><th>Territory</th><th>Result</th></tr>
 
 
-	<tr ng-repeat="f in fuzzy.files">
-		<td>{{ $index + 1 }}</td>
+	<tr ng-repeat="(idx, f) in fuzzy.files">
+
+		<td>{{ idx + 1 }}</td>
 		<td>{{ f.name }} {{f.$error}} {{f.$errorParam}}</td>
 	   	<td>
              
-              <select id="{{ $index }}_country" ng-model="fuzzylist.country" >
-                  <option value="">-- Select Country --</option>
-                  <option data-ng-repeat="country in fuzzy.countries" value="{{country.country_code}}">{{country.country_name}}</option>
-              </select>
-              
+        
+   <angucomplete-alt id="fuzzy.country_{{ idx }}"
+              placeholder="Search countries"
+              pause="100"
+              selected-object="fuzzy['selectedCountry_'+idx]"
+              local-data="fuzzy.countries"
+              search-fields="country_name"
+              title-field="country_name"
+              minlength="1"
+              input-class="form-control-10-small"
+              field-required-class="cls_country_{{ idx }}"              
+              field-required="true"
+
+              />
+
+
+
+
+            
 		</td>
+
 		<td>
 
-              <select id="{{ $index }}_territory" ng-model="fuzzylist.territory">
-                  <option value="">-- Select Territory --</option>
-                  <option data-ng-repeat="territory in fuzzy.territories" value="{{territory.id}}">{{territory.name}}</option>
-              </select>
+      <select id="{{ $index }}_territory" ng-model="fuzzy['selectedTerritory_'+idx]" multiple>
+          <option value="">-- Select Territory --</option>
+          <option data-ng-repeat="territory in fuzzy.territories" value="{{territory.id}}">{{territory.name}}</option> 
+      </select>
 
 		</td>
 		<td> 
-			Uploading..10%/Finding Matches..0%/ 
+			Uploading File
 {% endraw %}
-			<img src="{{ url_for('static', filename = 'images/excel_download_icon.jpg') }}" width="121" height="25">
+			<img src="{{ url_for('static', filename = 'images/spinner-small.gif') }}">
 {% raw %}
 
 		</td>
@@ -38,4 +54,15 @@
 
 </table>
 
+
+<br/>
+
+
+
+
+
+
 {% endraw %}
+
+
+</div>
