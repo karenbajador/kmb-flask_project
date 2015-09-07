@@ -4,10 +4,10 @@
     .module('fuzzy')
     .controller("fuzzyController", fuzzyController);
 
-  fuzzyController.$inject = ['countryFactory','territoriesFactory'];
+  fuzzyController.$inject = ['countryFactory','territoriesFactory','Upload'];
 
 
-  function fuzzyController(countryFactory,territoriesFactory) {
+  function fuzzyController(countryFactory,territoriesFactory, Upload) {
     var vm = this;
     vm.btn_fuzzy_disabled= true;
     vm.btn_cancel_disabled = true;
@@ -39,17 +39,16 @@
 
             Upload.upload({
                 url: 'upload/url',
-                fields: {'country': vm['selectedCountry_'+i].originalObject.country_code, 'territory': vm['selectedTerritory_'+i, },
+                fields: {'country': vm['selectedCountry_'+i].originalObject.country_code, 'territory': vm['selectedTerritory_'+i], },
                 file: vm.files[i]
+            }).progress(function (evt) {
+                var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+            }).success(function (data, status, headers, config) {
+                console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
+            }).error(function (data, status, headers, config) {
+                console.log('error status: ' + status);
             })
-            // .progress(function (evt) {
-            //     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-            //     console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-            // }).success(function (data, status, headers, config) {
-            //     console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
-            // }).error(function (data, status, headers, config) {
-            //     console.log('error status: ' + status);
-            // })
         
         }
 
