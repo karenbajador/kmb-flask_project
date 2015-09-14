@@ -46,7 +46,15 @@ from project.main.views import main_blueprint
 from project.fuzzy.views import fuzzy_blueprint
 app.register_blueprint(user_blueprint)
 app.register_blueprint(main_blueprint)
-app.register_blueprint(fuzzy_blueprint)
+app.register_blueprint(fuzzy_blueprint, url_prefix="/fuzzy")
+
+print ('app.url_map: {}'.format(app.url_map)) 
+
+
+
+###################
+### assets     ####
+###################
 
 bower = Bundle('js/bower_components/angular/angular.min.js', \
 	# 'js/angular-route.min.js', \
@@ -56,6 +64,18 @@ bower = Bundle('js/bower_components/angular/angular.min.js', \
             filters='jsmin', output='gen/bower.js')
 assets.register('bower_all', bower)
 
+    
+
+tags = Bundle('js/bower_components/ng-tags-input/ng-tags-input.js', \
+               filters='jsmin', output='gen/tags.js')
+assets.register('tags', tags)
+
+# tags_css = Bundle('js/bower_components/ng-tags-input/ng-tags-input.css', \
+#     'js/bower_components/ng-tags-input/ng-tags-input.bootstrap.css', \
+#                 filters='jsmin', output='gen/tags.js')
+# assets.register('tags_css', tags_css)
+
+ 
 
 main_factory = Bundle('js/factory/territories.js', \
 	'js/factory/countries.js', \
@@ -70,9 +90,11 @@ fuzzy_app = Bundle('js/fuzzy/fuzzy.controller.js', \
             filters='jsmin', output='gen/fuzzy.js')
 assets.register('app_fuzzy', fuzzy_app)
 
+
+
 main_css = Bundle('css/main.css', \
 	'js/bower_components/angucomplete-alt/angucomplete-alt.css', \
-            filters='jsmin', output='gen/main.css')
+               filters='jsmin', output='gen/main.css')
 assets.register('css_all', main_css)
 
 

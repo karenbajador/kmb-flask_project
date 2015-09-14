@@ -23,9 +23,11 @@
 		<h1>Fuzzy Match</h1>
 
 		    <!-- <div class="col-lg-6 col-sm-6 col-12"> -->
+
+
 		    <div>
             <h4>Upload spreadsheet</h4>
-            <form id="frmFuzzy" name="frmFuzzy" role="form" ng-submit="fuzzy.uploadAndMatch()">
+            <form id="frmFuzzy" name="frmFuzzy" role="form" ng-submit="fuzzy.submit()">
 
             <div class="input-group">
                 <input id="fuzzy_files" name="fuzzy_files" type="file" multiple="" ngf-select="fuzzy.uploadFiles($files)" ng-model="fuzzy.filesToUpload">
@@ -33,31 +35,36 @@
             </div>
             <span class="help-block">
                 <!-- Try selecting one or more files and watch the feedback -->
+
             </span>
 
       			 <div>
-             <div class="col-lg-10 col-md-10 col-sm-10">
-      			  {% include 'fuzzy/files_selected.html' %}
-      				{{errorMsg}} 
-              </div>
+                   <div class="col-lg-10 col-md-10 col-sm-10">
+            			  {% include 'files_selected.html' %}
+            				{{errorMsg}} 
+                    </div>
       			
 
-              <div class="col-lg-2 col-md-2 col-sm-2" ng-if="fuzzy.filesNotEmpty">
-            {% raw %}
-            <button type="submit" class="btn btn-primary" ng-disabled="fuzzy.btn_fuzzy_disabled || frmFuzzy.$invalid">Run Fuzzy!</button>
-            <br/><br/>
-            <button type="cancel" class="btn btn-primary" ng-disabled="fuzzy.btn_cancel_disabled">Cancel</button>
+                    <div class="col-lg-2 col-md-2 col-sm-2" ng-if="fuzzy.filesNotEmpty">
+                  {% raw %}
+                  <button type="submit" class="btn btn-primary" ng-disabled="fuzzy.btn_fuzzy_disabled || frmFuzzy.$invalid">
+                    <span ng-bind="fuzzy.btn_label"></span></button>
+                    <br/><br/>
+                  <button type="button" ng-click="fuzzy.f_alert('Not yet Available')" class="btn btn-primary" ng-disabled="fuzzy.btn_sendcrm_disabled">Send to CRM</button>
+                 
+                  
 
-
-            {% endraw %}
-            
-              </div>
+                  {% endraw %}
+                  
+                    </div>
             </div>
 
 
              </form>
 
         </div>
+
+           
 
 
 		</div>

@@ -1,0 +1,77 @@
+{% raw %}
+
+<div class="panel panel-default" ng-if="fuzzy.filesNotEmpty">
+
+
+
+<table  class="table table-striped table-condensed">
+
+   
+    <tr><th>#</th><th class="col-md-3">File Name</th><th class="col-md-3">Country</th><th class="col-md-3">Bayt Territory</th><th class="col-md-2">Result</th></tr>
+
+
+	<tr ng-repeat="(idx, f) in fuzzy.files">
+
+		<td>{{ idx + 1 }}</td>
+		<td>{{ f.name }} {{f.$error}} {{f.$errorParam}}</td>
+	   	<td>
+     <!-- fuzzy['selectedCountry_'+idx]         -->
+        
+   <angucomplete-alt id="fuzzy.country_{{ idx }}"
+              placeholder="Search countries"
+              pause="100"
+              selected-object="fuzzy.selectCountry"
+              local-data="fuzzy.countries"
+              search-fields="country_name"
+              title-field="country_name"
+              minlength="1"
+              input-class="form-control-10-small"
+              field-required-class="cls_country_{{ idx }}"              
+              field-required="true"
+              />
+
+         
+		</td>
+
+		<td>
+
+   
+        <tags-input ng-model="fuzzy.tags[idx]" 
+                    placeholder="Add a territory" 
+                    max-tags="3"
+                    replace-spaces-with-dashes = "false"
+                    add-from-autocomplete-only="true"
+                    class="fuzzy">
+        <auto-complete source="fuzzy.loadTags($query)"
+        select-first-match="false"></auto-complete>
+        </tags-input>
+
+ 
+		</td>
+		<td> 
+			<span ng-hide="fuzzy['lbl_loading_disabled'+idx]"><span ng-bind="fuzzy['status'+idx]"></span>
+{% endraw %}
+			<img src="{{ url_for('static', filename = 'images/spinner-small.gif') }}">
+{% raw %}
+      </span>
+
+      <span ng-hide="fuzzy['lbl_finished_disabled'+idx]"><span ng-bind="fuzzy['status'+idx]"></span>
+    <!--   <span ng-bind="fuzzy['btn_download_disabled'+idx]"> -->
+      <a href="download/{{ f.name }}">
+{% endraw %}     
+          <img ng-hide="fuzzy['btn_download_disabled'+idx]" class="excel-btn" src="{{ url_for('static', filename = 'images/excel_dl.gif') }}">
+{% raw %} 
+        </a>  
+        <!-- </span>       -->
+      </span>
+
+		</td>
+	</tr>
+
+</table>
+
+
+{% endraw %}
+
+
+</div>

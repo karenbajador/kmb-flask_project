@@ -6,6 +6,7 @@
 #################
 
 from flask import render_template, Blueprint
+from project.utils import nocache
 
 
 ################
@@ -29,6 +30,6 @@ def home():
 def about():
     return render_template("main/about.html")
 
-@main_blueprint.route('/fuzzy/')
-def fuzzy():
-    return render_template('fuzzy/home.html')
+
+
+    
