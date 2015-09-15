@@ -10,7 +10,7 @@ from project.fuzzy.settings import SOURCE_FOLDER
 import time
 
 # # Specify the Employee namedtuple.
-# postgres_interface_cls = PostgresInterface()
+postgres_interface_cls = PostgresInterface()
 Match = collections.namedtuple("Match", ["crm_company_id", "crm_company_name", "crm_group_id", "score"])
 
 
@@ -40,7 +40,7 @@ class Fuzzy:
 			print (company_keywords_list)
 
 			## Find matches in DB using keywords , country and territory
-			crm_results = self.postgres_interface_cls.get_record_match(company_name, company_keywords_list, self.country,  self.territory)
+			crm_results = postgres_interface_cls.get_record_match(company_name, company_keywords_list, self.country,  self.territory)
 
 
 			## Fuzzy match 

@@ -37,7 +37,7 @@ def find_match(filename, country, territory):
                 meta={})
 	print("************************" + app.AsyncResult(find_match.request.id).state)
 
-	proceed = f.start_test()
+	proceed = f.start()
 	
 
 	if proceed:
