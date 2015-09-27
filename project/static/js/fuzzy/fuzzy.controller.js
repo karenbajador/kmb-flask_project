@@ -2,9 +2,61 @@
 
   angular
     .module('fuzzy')
-    .controller("fuzzyController", fuzzyController);
+    .controller("fuzzyController", fuzzyController)
+    .controller("ModalDemoCtrl", ModalDemoCtrl)
+    .controller("ModalInstanceCtrl", ModalInstanceCtrl);
+    
 
   fuzzyController.$inject = ['countryFactory','territoriesFactory','Upload','$http','$timeout', '$q'];
+  ModalDemoCtrl.$inject = ['$modal', '$log'];
+  ModalInstanceCtrl.$inject = ['$modalInstance'];
+
+  function ModalDemoCtrl ($modal, $log) {
+    var vm = this;
+    vm.animationsEnabled = true;
+    vm.open = open;
+    vm.toggleAnimation = toggleAnimation;
+  
+    function open (size) {
+
+      var modalInstance = $modal.open({
+        animation: vm.animationsEnabled,
+        templateUrl: 'myModalContent.html',
+        controller: 'ModalInstanceCtrl',
+        size: size,
+        resolve: {
+          items: function () {
+            // return $scope.items;
+          }
+        }
+      });
+
+      modalInstance.result.then(function (selectedItem) {
+        // $scope.selected = selectedItem;
+      }, function () {
+        $log.info('Modal dismissed at: ' + new Date());
+      });
+    };
+
+    function toggleAnimation () {
+      vm.animationsEnabled = !vm.animationsEnabled;
+    };
+
+  };
+
+  function ModalInstanceCtrl ($modalInstance) {
+    var vm = this;
+    vm.ok = ok;
+    vm.cancel = cancel;
+
+    function ok() {
+      $modalInstance.close();
+    };
+
+    function cancel () {
+      $modalInstance.dismiss('cancel');
+    };
+  };
 
 
   function fuzzyController(countryFactory,territoriesFactory, Upload, $http, $timeout, $q) {
@@ -25,8 +77,12 @@
     vm.territories = territoriesFactory.territories
     vm.countryMapping = territoriesFactory.countryMapping
     vm.getAllCountries = getAllCountries
+  
+
 
     vm.tags = {};
+
+    
 
 
     function getAllCountries (callback) {
@@ -39,14 +95,31 @@
         }
     }
     function fillTerritory(idx, selectedCountry) {
+        
+        console.log('idx ::::' + idx)
         vm['selectedCountry_'+idx] = selectedCountry
-        var bayt_territories = vm.countryMapping[selectedCountry]
+        console.log('selectedCountry ::::' + selectedCountry)
+
+       
+        vm['countryMapping'+idx] = {}
+       
+       
+        angular.copy(vm.countryMapping, vm['countryMapping'+idx]);
+
+         console.log('countryMapping ::::' + JSON.stringify(vm.countryMapping))
+         console.log('countryMapping idx::::' + JSON.stringify(vm['countryMapping'+idx]))
+       
+
+        var bayt_territories = vm['countryMapping'+idx][selectedCountry]
         
         if (bayt_territories == undefined) {
           bayt_territories  = [{ text: 'International'}]
         }
+        console.log('bayt_territories ::::' + JSON.stringify(bayt_territories))
         vm.tags[idx] = bayt_territories
+        console.log('vm.tags['+idx+'] ::::' + JSON.stringify(vm.tags[idx]))
     }
+
     function loadTags (query) {
         // return $http.get('/tags?query=' + query);
          var defer = $q.defer();
@@ -64,6 +137,7 @@
           vm['lbl_loading_disabled'+i] = true
           vm['lbl_finished_disabled'+i] = true
           vm['status'+i] = ""
+          vm.tags[i] = ""
 
         }
 
@@ -112,6 +186,7 @@
         vm.job_ids = []
         vm.btn_sendcrm_disabled = true;
 
+
         for (var i = 0; i < vm.files.length; i++) {
             console.log("i : " + i)
             vm['lbl_loading_disabled'+i] = false
@@ -145,12 +220,13 @@
             }).error(function (data, status, headers, config) {
                 console.log('error status: ' + status);
                 vm.btn_fuzzy_disabled= false;
-                vm.btn_label = "Run Fuzzy!"
+                vm.job_ids = remove(vm.job_ids, data.job_id)
+                
             })
 
-          
-        
-        }            
+        }
+
+         console.log("XXXXXXXXXXXXXXXXXXXXXX " + JSON.stringify(vm.job_ids))            
 
     }
 
@@ -166,6 +242,8 @@
               vm['status'+i] = data
               console.log('The current status is : ' + data)
             } else if (status === 200){
+              //pop job id
+               vm.job_ids = remove(vm.job_ids, job_id)
 
               console.log('The current status is : ' + data)
               
@@ -181,14 +259,24 @@
               }
 
 
-              vm.btn_label = "Run Fuzzy!"
+              // vm.btn_label = "Run Fuzzy!"
               vm['lbl_loading_disabled'+i] = true
               vm['lbl_finished_disabled'+i] = false
+
+              console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& " + JSON.stringify(vm.job_ids))
+            
+              //if no more pending jobs
+              if (vm.job_ids.length == 0) {
+                vm.btn_label = "Run Fuzzy!"
+              }
               
               
 
               return false;
             }
+
+            
+
             // continue to call the tracker() function every 2 seconds
             // until the timout is cancelled
             timeout = $timeout(tracker, 2000);
@@ -199,9 +287,20 @@
       tracker();
     }
 
+    function remove(arr, element) {
+      var i = arr.indexOf(element);
+      if(i != -1) {
+        arr.splice(i, 1);
+      }
+
+      return arr
+    }
+
     function f_alert(text) {
         alert(text)
-    }    
+    }
+
+  
 
 
   }

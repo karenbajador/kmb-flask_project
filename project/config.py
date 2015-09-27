@@ -19,10 +19,10 @@ class DevelopmentConfig(BaseConfig):
     WTF_CSRF_ENABLED = False
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'dev.sqlite')
     DEBUG_TB_ENABLED = True
-
-    # CACHE_TYPE = "null"
-    # SEND_FILE_MAX_AGE_DEFAULT = 0
     # ASSETS_DEBUG = True
+    CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'
+    BROKER_URL = 'redis://127.0.0.1:6379/0'
+
 
 
 class TestingConfig(BaseConfig):
@@ -41,3 +41,5 @@ class ProductionConfig(BaseConfig):
     DEBUG = False
     SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/example'
     DEBUG_TB_ENABLED = False
+    CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'
+    BROKER_URL = 'redis://127.0.0.1:6379/0'

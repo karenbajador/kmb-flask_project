@@ -15,6 +15,7 @@ import csv
 import urllib.request
 import requests
 import re
+import ast
 
 
 
@@ -55,8 +56,13 @@ def upload():
 	country = request.form.get("country")
 	territory = request.form.get("territory")
 
-	print ("country: {}".format(country))
-	print ("territory: {}".format(territory))
+	# print ("country: {}".format(country))
+	# print ("territory: {}".format(territory))
+
+	country = country.lower()
+	territory = ast.literal_eval(territory)
+
+	# print ("joined territory: {}".format(type(territory)))
 	
 	result = {}
 	result['i'] = request.form.get("i")
@@ -78,7 +84,7 @@ def result(job_id):
 
 @fuzzy_blueprint.route('/cancel', methods=['POST'])
 def cancel():
-	print("CANCELLLLLLLLLLLLLLLLLl!!!!!!!!!!!!!!!!!!")
+	# print("CANCELLLLLLLLLLLLLLLLLl!!!!!!!!!!!!!!!!!!")
 	data = request.get_json()
 
 	print("data:{}".format(data))
@@ -103,6 +109,13 @@ def generate_csv(filename):
 			yield ','.join((re.sub(r"\bnan\b", "", "\""+str(row[1][column]))+"\"" for column in columns)) + '\n'
 
 	return Response(generate(), mimetype='text/csv')
+
+
+@fuzzy_blueprint.route('/send/<filename>')
+def send(filename, score):
+
+		pass
+			
 
 
 

@@ -1,9 +1,9 @@
 class Config(object):
-    PG_HOST = "HOST_IP_ADDRESS"
-    PG_PORT = 'PORT'
-    PG_USERNAME = 'USERNAME'
-    PG_PASSWORD = 'PASSWORD'
-    PG_DB = 'DATABASE_NAME'
+    PG_HOST = "localhost"
+    PG_PORT = 5436
+    PG_USERNAME = ''
+    PG_PASSWORD = ''
+    PG_DB = 'postgres'
     PG_THREADS = 8
 
 

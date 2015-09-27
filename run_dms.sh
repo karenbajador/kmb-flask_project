@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-export PG_ENV='project.config.DubaiDevConfig'
+export APP_SETTINGS='project.config.ProductionConfig'
+export PG_ENV='ProductionConfig'
 
 
-python manage.py runserver
+python manage.py runserver --port 8000
 
-celery -A project.worker.tasks worker --loglevel=info --purge

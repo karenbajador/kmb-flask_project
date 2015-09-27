@@ -18,5 +18,20 @@ COLUMNS = ["Company Name", \
             "Employees" \
             ]
 
+#Columns to retrieve from spreadsheet
+COLUMNS_FOR_CRM_RECORD = ["Company Name", \
+            "Address Line 1", \
+            "City", \
+            "Phone", \
+            "URL", \
+            "Revenue (As Reported)", \
+            "Employees" \
+            "Match Status"
+            ]  
+         
 TEST_FOLDER = "files"
 TEST_FILE = "sample.csv"
+
+MAXIMUM_FILES_TO_SEND_PER_REQUEST = 100
+
+CRM_API_URL = ''

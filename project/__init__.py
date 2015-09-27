@@ -61,6 +61,8 @@ bower = Bundle('js/bower_components/angular/angular.min.js', \
 	'js/bower_components/ng-file-upload/ng-file-upload-shim.min.js', \
 	'js/bower_components/ng-file-upload-shim/ng-file-upload.min.js', \
 	'js/bower_components/angucomplete-alt/angucomplete-alt.js', \
+    'js/bower_components/angular-bootstrap/ui-bootstrap.js', \
+    'js/bower_components/angular-bootstrap/ui-bootstrap-tpls.js', \
             filters='jsmin', output='gen/bower.js')
 assets.register('bower_all', bower)
 
@@ -94,6 +96,7 @@ assets.register('app_fuzzy', fuzzy_app)
 
 main_css = Bundle('css/main.css', \
 	'js/bower_components/angucomplete-alt/angucomplete-alt.css', \
+    'js/bower_components/angular-bootstrap/ui-bootstrap-csp.css', \
                filters='jsmin', output='gen/main.css')
 assets.register('css_all', main_css)
 

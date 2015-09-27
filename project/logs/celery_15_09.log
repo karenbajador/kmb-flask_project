@@ -1,0 +1,643 @@
+[2015-09-16 10:10:18,392: WARNING/MainProcess] /home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2015-09-16 10:10:18,438: INFO/MainProcess] Connected to redis://127.0.0.1:6379/0
+[2015-09-16 10:10:18,447: INFO/MainProcess] mingle: searching for neighbors
+[2015-09-16 10:10:19,451: INFO/MainProcess] mingle: all alone
+[2015-09-16 10:10:19,459: WARNING/MainProcess] celery@UAEDXBGBT-106 ready.
+[2015-09-16 10:27:34,640: INFO/MainProcess] Received task: project.worker.tasks.find_match[34e983da-5fde-4c00-8589-7bac3339b4e5]
+[2015-09-16 10:27:34,642: WARNING/Worker-1] INSIDE FUZZZZZZZZY
+[2015-09-16 10:27:34,642: WARNING/Worker-1] Loading Data...
+[2015-09-16 10:27:34,645: WARNING/Worker-1] Loaded Data!
+[2015-09-16 10:27:34,650: WARNING/Worker-1] START
+[2015-09-16 10:27:34,658: WARNING/Worker-1] *****************
+[2015-09-16 10:27:34,658: WARNING/Worker-1] Union Defence Force
+[2015-09-16 10:27:34,659: WARNING/Worker-1] {'force', 'defence', 'union defence force'}
+[2015-09-16 10:27:34,659: WARNING/Worker-1] select company_id, lower(company_name), group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:27:34,659: WARNING/Worker-1] ['%force%', '%defence%', '%union defence force%', '%union defence force%']
+[2015-09-16 10:27:35,008: WARNING/Worker-1] crm_results: [(3122826, 'force 10 group', 498899), (87957, 'armed forces officers club', None), (3498202, 'reinforcement human resource consultants', 1515950), (1586529, 'hi-force fzco', 0), (2626201, 'hi force', None), (3484048, 'uae armed forces (ghq)', None), (3493352, 'tech force technical services', 1622559), (3355612, 'ministry of defence', 0), (3473645, 'hyder force', 1526448), (93361, 'nforce human resources consultancy', 359598), (3451057, 'pentaforce general contracting', None), (3496526, 'g force arts', None), (24792, 'stableforce trading', None), (3510969, 'europe strong force post tensioning l.l.c', None), (3122064, 'directorate general of dubai civil defence', 1050742)]
+[2015-09-16 10:27:35,009: WARNING/Worker-1] 75 => best_match: Match(crm_company_id=2626201, crm_company_name='hi force', crm_group_id=None, score=75)
+[2015-09-16 10:27:35,048: WARNING/Worker-1] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:57: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['Match Status'][int(index)]=str(best_score)
+[2015-09-16 10:27:35,078: WARNING/Worker-1] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:58: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Company Name'][int(index)]=best_match.crm_company_name
+[2015-09-16 10:27:35,106: WARNING/Worker-1] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:59: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Group ID'][int(index)]=best_match.crm_group_id
+[2015-09-16 10:27:35,136: WARNING/Worker-1] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:60: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Company ID'][int(index)]=best_match.crm_company_id
+[2015-09-16 10:27:35,137: WARNING/Worker-1] *****************
+[2015-09-16 10:27:35,137: WARNING/Worker-1] Arabtec Holding PJSC
+[2015-09-16 10:27:35,137: WARNING/Worker-1] {'arabtec', 'arabtec holding'}
+[2015-09-16 10:27:35,138: WARNING/Worker-1] select company_id, lower(company_name), group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:27:35,138: WARNING/Worker-1] ['%arabtec%', '%arabtec holding%', '%arabtec holding pjsc%']
+[2015-09-16 10:27:35,819: WARNING/Worker-1] crm_results: [(89949, 'arabtec auh', 1713303)]
+[2015-09-16 10:27:35,820: WARNING/Worker-1] 81 => best_match: Match(crm_company_id=89949, crm_company_name='arabtec auh', crm_group_id=1713303, score=81)
+[2015-09-16 10:27:35,937: WARNING/Worker-1] *****************
+[2015-09-16 10:27:35,937: WARNING/Worker-1] Al Jaber Transport & General Contracting Llc
+[2015-09-16 10:27:35,937: WARNING/Worker-1] {'jaber', 'al jaber transport & general contracting'}
+[2015-09-16 10:27:35,937: WARNING/Worker-1] select company_id, lower(company_name), group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:27:35,937: WARNING/Worker-1] ['%jaber%', '%al jaber transport & general contracting%', '%al jaber transport & general contracting llc%']
+[2015-09-16 10:27:36,275: WARNING/Worker-1] crm_results: [(542493, "alec - al jaber legt eng'g & contracting", 646549), (89867, 'al jaber group llc', 21232), (3446123, 'al jaber aviation', None), (3474441, 'al jaber energy services', None), (314366, 'al jaber trading / al jaber optical', 540699)]
+[2015-09-16 10:27:36,276: WARNING/Worker-1] 64 => best_match: Match(crm_company_id=3446123, crm_company_name='al jaber aviation', crm_group_id=None, score=64)
+[2015-09-16 10:27:36,396: WARNING/Worker-1] *****************
+[2015-09-16 10:27:36,396: WARNING/Worker-1] Arabian Construction Company - W L L
+[2015-09-16 10:27:36,396: WARNING/Worker-1] {'arabian construction company w l l'}
+[2015-09-16 10:27:36,396: WARNING/Worker-1] select company_id, lower(company_name), group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:27:36,396: WARNING/Worker-1] ['%arabian construction company w l l%', '%arabian construction company w l l%']
+[2015-09-16 10:27:36,741: WARNING/Worker-1] crm_results: []
+[2015-09-16 10:27:36,742: WARNING/Worker-1] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 10:27:36,862: WARNING/Worker-1] *****************
+[2015-09-16 10:27:36,862: WARNING/Worker-1] Abu Dhabi Group
+[2015-09-16 10:27:36,863: WARNING/Worker-1] {'abu dhabi group'}
+[2015-09-16 10:27:36,863: WARNING/Worker-1] select company_id, lower(company_name), group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:27:36,863: WARNING/Worker-1] ['%abu dhabi group%', '%abu dhabi group%']
+[2015-09-16 10:27:37,224: WARNING/Worker-1] crm_results: []
+[2015-09-16 10:27:37,224: WARNING/Worker-1] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 10:27:37,346: WARNING/Worker-1] *****************
+[2015-09-16 10:27:37,346: WARNING/Worker-1] EMKE Group LLC
+[2015-09-16 10:27:37,346: WARNING/Worker-1] {'emke', 'emke group'}
+[2015-09-16 10:27:37,346: WARNING/Worker-1] select company_id, lower(company_name), group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:27:37,346: WARNING/Worker-1] ['%emke%', '%emke group%', '%emke group llc%']
+[2015-09-16 10:27:37,496: WARNING/Worker-1] crm_results: []
+[2015-09-16 10:27:37,496: WARNING/Worker-1] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 10:27:37,632: WARNING/Worker-1] *****************
+[2015-09-16 10:27:37,632: WARNING/Worker-1] National Central Cooling Co PSC
+[2015-09-16 10:27:37,632: WARNING/Worker-1] {'national central cooling', 'cooling'}
+[2015-09-16 10:27:37,633: WARNING/Worker-1] select company_id, lower(company_name), group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:27:37,633: WARNING/Worker-1] ['%national central cooling%', '%cooling%', '%national central cooling co psc%']
+[2015-09-16 10:27:37,803: WARNING/Worker-1] crm_results: [(3039209, 'dolphin radiators & cooling systems llc', None), (541283, 'district cooling company', 606449), (62846, 'tabreed, national central cooling co. (pjsc)', 506599), (58262, 'electro cooling center llc', None), (3399977, 'abraj cooling', None), (3464556, 'gea polacel cooling towers fzco', 0)]
+[2015-09-16 10:27:37,803: WARNING/Worker-1] 93 => best_match: Match(crm_company_id=62846, crm_company_name='tabreed, national central cooling co. (pjsc)', crm_group_id=506599, score=93)
+[2015-09-16 10:27:37,919: WARNING/Worker-1] *****************
+[2015-09-16 10:27:37,920: WARNING/Worker-1] Abu Dhabi Water & Electricity Authority
+[2015-09-16 10:27:37,920: WARNING/Worker-1] {'abu dhabi water & electricity authority', 'electricity'}
+[2015-09-16 10:27:37,920: WARNING/Worker-1] select company_id, lower(company_name), group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:27:37,920: WARNING/Worker-1] ['%abu dhabi water & electricity authority%', '%electricity%', '%abu dhabi water & electricity authority%']
+[2015-09-16 10:27:38,062: WARNING/Worker-1] crm_results: [(1257565, 'electricity de france (edf)', 0), (541243, 'federal electricity and water authority (fewa)', 629449), (23998, 'dubai electricity and water authority dewa', 138967), (3399931, 'elster electricity company', 0), (3403491, 'sharjah electricity and water authority', 0), (27162, 'abu dhabi water and electricity authority', 89901)]
+[2015-09-16 10:27:38,063: WARNING/Worker-1] 92 => best_match: Match(crm_company_id=27162, crm_company_name='abu dhabi water and electricity authority', crm_group_id=89901, score=92)
+[2015-09-16 10:27:38,179: WARNING/Worker-1] *****************
+[2015-09-16 10:27:38,179: WARNING/Worker-1] Al Jaber Group LLC
+[2015-09-16 10:27:38,179: WARNING/Worker-1] {'jaber', 'al jaber group'}
+[2015-09-16 10:27:38,179: WARNING/Worker-1] select company_id, lower(company_name), group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:27:38,179: WARNING/Worker-1] ['%jaber%', '%al jaber group%', '%al jaber group llc%']
+[2015-09-16 10:27:38,310: WARNING/Worker-1] crm_results: [(542493, "alec - al jaber legt eng'g & contracting", 646549), (89867, 'al jaber group llc', 21232), (3446123, 'al jaber aviation', None), (3474441, 'al jaber energy services', None), (314366, 'al jaber trading / al jaber optical', 540699)]
+[2015-09-16 10:27:38,311: WARNING/Worker-1] 100 => best_match: Match(crm_company_id=89867, crm_company_name='al jaber group llc', crm_group_id=21232, score=100)
+[2015-09-16 10:27:38,427: INFO/MainProcess] Task project.worker.tasks.find_match[34e983da-5fde-4c00-8589-7bac3339b4e5] succeeded in 3.785920263000662s: None
+[2015-09-16 10:33:25,289: WARNING/MainProcess] /home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2015-09-16 10:33:25,332: INFO/MainProcess] Connected to redis://127.0.0.1:6379/0
+[2015-09-16 10:33:25,340: INFO/MainProcess] mingle: searching for neighbors
+[2015-09-16 10:33:26,344: INFO/MainProcess] mingle: all alone
+[2015-09-16 10:33:26,351: WARNING/MainProcess] celery@UAEDXBGBT-106 ready.
+[2015-09-16 10:33:32,764: INFO/MainProcess] Received task: project.worker.tasks.find_match[a386ce13-9444-4d8b-9bf0-0b04928f7a43]
+[2015-09-16 10:33:32,766: WARNING/Worker-2] INSIDE FUZZZZZZZZY
+[2015-09-16 10:33:32,767: WARNING/Worker-2] Loading Data...
+[2015-09-16 10:33:32,771: WARNING/Worker-2] Loaded Data!
+[2015-09-16 10:33:32,773: WARNING/Worker-2] START
+[2015-09-16 10:33:32,786: WARNING/Worker-2] *****************
+[2015-09-16 10:33:32,786: WARNING/Worker-2] Union Defence Force
+[2015-09-16 10:33:32,786: WARNING/Worker-2] {'defence', 'union defence force', 'force'}
+[2015-09-16 10:33:32,787: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:33:32,787: WARNING/Worker-2] ['%defence%', '%union defence force%', '%force%', '%union defence force%']
+[2015-09-16 10:33:33,176: WARNING/Worker-2] crm_results: [(3122826, 'Force 10 Group', 498899), (87957, 'Armed Forces Officers Club', None), (3498202, 'Reinforcement Human Resource Consultants', 1515950), (1586529, 'Hi-Force FZCO', 0), (2626201, 'Hi Force', None), (3484048, 'UAE Armed Forces (GHQ)', None), (3493352, 'Tech Force Technical Services', 1622559), (3355612, 'Ministry Of Defence', 0), (3473645, 'Hyder force', 1526448), (93361, 'nForce Human Resources Consultancy', 359598), (3451057, 'Pentaforce General Contracting', None), (3496526, 'G force arts', None), (24792, 'Stableforce Trading', None), (3510969, 'Europe Strong Force Post Tensioning L.L.C', None), (3122064, 'Directorate General of Dubai Civil Defence', 1050742)]
+[2015-09-16 10:33:33,177: WARNING/Worker-2] 75 => best_match: Match(crm_company_id=2626201, crm_company_name='Hi Force', crm_group_id=None, score=75)
+[2015-09-16 10:33:33,215: WARNING/Worker-2] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:57: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['Match Status'][int(index)]=str(best_score)
+[2015-09-16 10:33:33,248: WARNING/Worker-2] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:58: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Company Name'][int(index)]=best_match.crm_company_name
+[2015-09-16 10:33:33,276: WARNING/Worker-2] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:59: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Group ID'][int(index)]=best_match.crm_group_id
+[2015-09-16 10:33:33,310: WARNING/Worker-2] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:60: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Company ID'][int(index)]=best_match.crm_company_id
+[2015-09-16 10:33:33,311: WARNING/Worker-2] *****************
+[2015-09-16 10:33:33,311: WARNING/Worker-2] Arabtec Holding PJSC
+[2015-09-16 10:33:33,312: WARNING/Worker-2] {'arabtec', 'arabtec holding'}
+[2015-09-16 10:33:33,312: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:33:33,312: WARNING/Worker-2] ['%arabtec%', '%arabtec holding%', '%arabtec holding pjsc%']
+[2015-09-16 10:33:33,621: WARNING/Worker-2] crm_results: [(89949, 'Arabtec AUH', 1713303)]
+[2015-09-16 10:33:33,622: WARNING/Worker-2] 81 => best_match: Match(crm_company_id=89949, crm_company_name='Arabtec AUH', crm_group_id=1713303, score=81)
+[2015-09-16 10:33:33,743: WARNING/Worker-2] *****************
+[2015-09-16 10:33:33,743: WARNING/Worker-2] Al Jaber Transport & General Contracting Llc
+[2015-09-16 10:33:33,743: WARNING/Worker-2] {'jaber', 'al jaber transport & general contracting'}
+[2015-09-16 10:33:33,743: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:33:33,744: WARNING/Worker-2] ['%jaber%', '%al jaber transport & general contracting%', '%al jaber transport & general contracting llc%']
+[2015-09-16 10:33:34,105: WARNING/Worker-2] crm_results: [(542493, "ALEC - Al Jaber Legt Eng'g & Contracting", 646549), (89867, 'Al Jaber Group LLC', 21232), (3446123, 'Al Jaber Aviation', None), (3474441, 'Al Jaber Energy Services', None), (314366, 'Al Jaber Trading / Al Jaber Optical', 540699)]
+[2015-09-16 10:33:34,106: WARNING/Worker-2] 64 => best_match: Match(crm_company_id=3446123, crm_company_name='Al Jaber Aviation', crm_group_id=None, score=64)
+[2015-09-16 10:33:34,227: WARNING/Worker-2] *****************
+[2015-09-16 10:33:34,227: WARNING/Worker-2] Arabian Construction Company - W L L
+[2015-09-16 10:33:34,227: WARNING/Worker-2] {'arabian construction company w l l'}
+[2015-09-16 10:33:34,227: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:33:34,227: WARNING/Worker-2] ['%arabian construction company w l l%', '%arabian construction company w l l%']
+[2015-09-16 10:33:34,567: WARNING/Worker-2] crm_results: []
+[2015-09-16 10:33:34,568: WARNING/Worker-2] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 10:33:34,689: WARNING/Worker-2] *****************
+[2015-09-16 10:33:34,690: WARNING/Worker-2] Abu Dhabi Group
+[2015-09-16 10:33:34,690: WARNING/Worker-2] {'abu dhabi group'}
+[2015-09-16 10:33:34,690: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:33:34,690: WARNING/Worker-2] ['%abu dhabi group%', '%abu dhabi group%']
+[2015-09-16 10:33:35,008: WARNING/Worker-2] crm_results: []
+[2015-09-16 10:33:35,008: WARNING/Worker-2] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 10:33:35,129: WARNING/Worker-2] *****************
+[2015-09-16 10:33:35,129: WARNING/Worker-2] EMKE Group LLC
+[2015-09-16 10:33:35,129: WARNING/Worker-2] {'emke group', 'emke'}
+[2015-09-16 10:33:35,129: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:33:35,129: WARNING/Worker-2] ['%emke group%', '%emke%', '%emke group llc%']
+[2015-09-16 10:33:35,454: WARNING/Worker-2] crm_results: []
+[2015-09-16 10:33:35,454: WARNING/Worker-2] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 10:33:35,646: WARNING/Worker-2] *****************
+[2015-09-16 10:33:35,646: WARNING/Worker-2] National Central Cooling Co PSC
+[2015-09-16 10:33:35,646: WARNING/Worker-2] {'cooling', 'national central cooling'}
+[2015-09-16 10:33:35,647: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:33:35,647: WARNING/Worker-2] ['%cooling%', '%national central cooling%', '%national central cooling co psc%']
+[2015-09-16 10:33:35,910: WARNING/Worker-2] crm_results: [(3039209, 'Dolphin Radiators & Cooling Systems LLC', None), (541283, 'District Cooling Company', 606449), (62846, 'Tabreed, National Central Cooling Co. (PJSC)', 506599), (58262, 'Electro Cooling Center LLC', None), (3399977, 'Abraj Cooling', None), (3464556, 'Gea Polacel Cooling Towers Fzco', 0)]
+[2015-09-16 10:33:35,910: WARNING/Worker-2] 93 => best_match: Match(crm_company_id=62846, crm_company_name='Tabreed, National Central Cooling Co. (PJSC)', crm_group_id=506599, score=93)
+[2015-09-16 10:33:36,061: WARNING/Worker-2] *****************
+[2015-09-16 10:33:36,061: WARNING/Worker-2] Abu Dhabi Water & Electricity Authority
+[2015-09-16 10:33:36,061: WARNING/Worker-2] {'electricity', 'abu dhabi water & electricity authority'}
+[2015-09-16 10:33:36,062: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:33:36,062: WARNING/Worker-2] ['%electricity%', '%abu dhabi water & electricity authority%', '%abu dhabi water & electricity authority%']
+[2015-09-16 10:33:36,363: WARNING/Worker-2] crm_results: [(1257565, 'electricity de france (edf)', 0), (541243, 'Federal Electricity and Water Authority (FEWA)', 629449), (23998, 'Dubai Electricity and Water Authority Dewa', 138967), (3399931, 'Elster Electricity Company', 0), (3403491, 'Sharjah Electricity and Water Authority', 0), (27162, 'Abu Dhabi Water and Electricity Authority', 89901)]
+[2015-09-16 10:33:36,363: WARNING/Worker-2] 92 => best_match: Match(crm_company_id=27162, crm_company_name='Abu Dhabi Water and Electricity Authority', crm_group_id=89901, score=92)
+[2015-09-16 10:33:36,487: WARNING/Worker-2] *****************
+[2015-09-16 10:33:36,487: WARNING/Worker-2] Al Jaber Group LLC
+[2015-09-16 10:33:36,487: WARNING/Worker-2] {'jaber', 'al jaber group'}
+[2015-09-16 10:33:36,487: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 10:33:36,488: WARNING/Worker-2] ['%jaber%', '%al jaber group%', '%al jaber group llc%']
+[2015-09-16 10:33:36,813: WARNING/Worker-2] crm_results: [(542493, "ALEC - Al Jaber Legt Eng'g & Contracting", 646549), (89867, 'Al Jaber Group LLC', 21232), (3446123, 'Al Jaber Aviation', None), (3474441, 'Al Jaber Energy Services', None), (314366, 'Al Jaber Trading / Al Jaber Optical', 540699)]
+[2015-09-16 10:33:36,814: WARNING/Worker-2] 100 => best_match: Match(crm_company_id=89867, crm_company_name='Al Jaber Group LLC', crm_group_id=21232, score=100)
+[2015-09-16 10:33:36,939: INFO/MainProcess] Task project.worker.tasks.find_match[a386ce13-9444-4d8b-9bf0-0b04928f7a43] succeeded in 4.174152281999341s: None
+[2015-09-16 12:26:15,375: INFO/MainProcess] Received task: project.worker.tasks.find_match[cf1c1b8c-c6b3-484f-b927-48dbc9d9d5b4]
+[2015-09-16 12:26:15,424: INFO/MainProcess] Received task: project.worker.tasks.find_match[0570afe5-9bf8-4835-b2f1-d7164d0594b7]
+[2015-09-16 12:26:15,426: WARNING/Worker-3] INSIDE FUZZZZZZZZY
+[2015-09-16 12:26:15,427: WARNING/Worker-3] Loading Data...
+[2015-09-16 12:26:15,428: WARNING/Worker-4] INSIDE FUZZZZZZZZY
+[2015-09-16 12:26:15,429: WARNING/Worker-4] Loading Data...
+[2015-09-16 12:26:15,645: WARNING/Worker-3] Loaded Data!
+[2015-09-16 12:26:15,645: WARNING/Worker-4] Loaded Data!
+[2015-09-16 12:26:15,772: WARNING/Worker-4] START
+[2015-09-16 12:26:15,772: WARNING/Worker-3] START
+[2015-09-16 12:26:15,781: WARNING/Worker-4] *****************
+[2015-09-16 12:26:15,781: WARNING/Worker-4] Union Defence Force
+[2015-09-16 12:26:15,781: WARNING/Worker-4] {'defence', 'union defence force', 'force'}
+[2015-09-16 12:26:15,782: WARNING/Worker-3] *****************
+[2015-09-16 12:26:15,782: WARNING/Worker-3] Union Defence Force
+[2015-09-16 12:26:15,782: WARNING/Worker-3] {'defence', 'union defence force', 'force'}
+[2015-09-16 12:26:15,791: WARNING/Worker-3] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s or lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:15,791: WARNING/Worker-4] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:15,791: WARNING/Worker-3] ['%defence%', '%union defence force%', '%force%', '%union defence force%']
+[2015-09-16 12:26:15,791: WARNING/Worker-4] ['%defence%', '%union defence force%', '%force%', '%union defence force%']
+[2015-09-16 12:26:15,884: WARNING/Worker-3] crm_results: [(3122826, 'Force 10 Group', 498899), (87957, 'Armed Forces Officers Club', None), (2626201, 'Hi Force', None), (3484048, 'UAE Armed Forces (GHQ)', None), (3451057, 'Pentaforce General Contracting', None)]
+[2015-09-16 12:26:15,894: WARNING/Worker-3] 75 => best_match: Match(crm_company_id=2626201, crm_company_name='Hi Force', crm_group_id=None, score=75)
+[2015-09-16 12:26:15,964: WARNING/Worker-3] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:57: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['Match Status'][int(index)]=str(best_score)
+[2015-09-16 12:26:15,994: WARNING/Worker-3] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:58: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Company Name'][int(index)]=best_match.crm_company_name
+[2015-09-16 12:26:16,023: WARNING/Worker-3] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:59: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Group ID'][int(index)]=best_match.crm_group_id
+[2015-09-16 12:26:16,053: WARNING/Worker-3] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:60: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Company ID'][int(index)]=best_match.crm_company_id
+[2015-09-16 12:26:16,085: WARNING/Worker-3] *****************
+[2015-09-16 12:26:16,085: WARNING/Worker-3] Arabtec Holding PJSC
+[2015-09-16 12:26:16,086: WARNING/Worker-3] {'arabtec', 'arabtec holding'}
+[2015-09-16 12:26:16,086: WARNING/Worker-3] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:16,086: WARNING/Worker-3] ['%arabtec%', '%arabtec holding%', '%arabtec holding pjsc%']
+[2015-09-16 12:26:16,163: WARNING/Worker-3] crm_results: [(89949, 'Arabtec AUH', 1713303)]
+[2015-09-16 12:26:16,163: WARNING/Worker-3] 81 => best_match: Match(crm_company_id=89949, crm_company_name='Arabtec AUH', crm_group_id=1713303, score=81)
+[2015-09-16 12:26:16,288: WARNING/Worker-3] *****************
+[2015-09-16 12:26:16,289: WARNING/Worker-3] Al Jaber Transport & General Contracting Llc
+[2015-09-16 12:26:16,289: WARNING/Worker-3] {'jaber', 'al jaber transport & general contracting'}
+[2015-09-16 12:26:16,289: WARNING/Worker-3] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:16,289: WARNING/Worker-3] ['%jaber%', '%al jaber transport & general contracting%', '%al jaber transport & general contracting llc%']
+[2015-09-16 12:26:16,373: WARNING/Worker-3] crm_results: [(89867, 'Al Jaber Group LLC', 21232), (3446123, 'Al Jaber Aviation', None), (3474441, 'Al Jaber Energy Services', None)]
+[2015-09-16 12:26:16,373: WARNING/Worker-3] 64 => best_match: Match(crm_company_id=3446123, crm_company_name='Al Jaber Aviation', crm_group_id=None, score=64)
+[2015-09-16 12:26:16,501: WARNING/Worker-3] *****************
+[2015-09-16 12:26:16,501: WARNING/Worker-3] Arabian Construction Company - W L L
+[2015-09-16 12:26:16,501: WARNING/Worker-3] {'arabian construction company w l l'}
+[2015-09-16 12:26:16,501: WARNING/Worker-3] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:16,501: WARNING/Worker-3] ['%arabian construction company w l l%', '%arabian construction company w l l%']
+[2015-09-16 12:26:16,564: WARNING/Worker-3] crm_results: []
+[2015-09-16 12:26:16,564: WARNING/Worker-3] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 12:26:16,688: WARNING/Worker-3] *****************
+[2015-09-16 12:26:16,688: WARNING/Worker-3] Abu Dhabi Group
+[2015-09-16 12:26:16,688: WARNING/Worker-3] {'abu dhabi group'}
+[2015-09-16 12:26:16,688: WARNING/Worker-3] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:16,688: WARNING/Worker-3] ['%abu dhabi group%', '%abu dhabi group%']
+[2015-09-16 12:26:16,757: WARNING/Worker-3] crm_results: []
+[2015-09-16 12:26:16,757: WARNING/Worker-3] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 12:26:16,883: WARNING/Worker-3] *****************
+[2015-09-16 12:26:16,883: WARNING/Worker-3] EMKE Group LLC
+[2015-09-16 12:26:16,883: WARNING/Worker-3] {'emke group', 'emke'}
+[2015-09-16 12:26:16,883: WARNING/Worker-3] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:16,883: WARNING/Worker-3] ['%emke group%', '%emke%', '%emke group llc%']
+[2015-09-16 12:26:17,018: WARNING/Worker-3] crm_results: []
+[2015-09-16 12:26:17,018: WARNING/Worker-3] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 12:26:17,143: WARNING/Worker-3] *****************
+[2015-09-16 12:26:17,143: WARNING/Worker-3] National Central Cooling Co PSC
+[2015-09-16 12:26:17,143: WARNING/Worker-3] {'cooling', 'national central cooling'}
+[2015-09-16 12:26:17,144: WARNING/Worker-3] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:17,144: WARNING/Worker-3] ['%cooling%', '%national central cooling%', '%national central cooling co psc%']
+[2015-09-16 12:26:17,337: ERROR/MainProcess] Task project.worker.tasks.find_match[0570afe5-9bf8-4835-b2f1-d7164d0594b7] raised unexpected: DatabaseError('error with no message from the libpq',)
+Traceback (most recent call last):
+  File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/karen-bajador/Projects/flask_project/dms/project/worker/tasks.py", line 20, in find_match
+    proceed = f.start()
+  File "/home/karen-bajador/Projects/flask_project/dms/project/fuzzy/fuzzy.py", line 43, in start
+    crm_results = postgres_interface_cls.get_record_match(company_name, company_keywords_list, self.country,  self.territory)
+  File "/home/karen-bajador/Projects/flask_project/dms/project/fuzzy/postgres_interface.py", line 41, in get_record_match
+    cur.execute(sql,list('%{}%'.format(keyword) for keyword in company_keywords_list if len(keyword) > 2) + ['%{}%'.format(company_name)])
+psycopg2.DatabaseError: error with no message from the libpq
+[2015-09-16 12:26:17,350: INFO/MainProcess] Terminating cf1c1b8c-c6b3-484f-b927-48dbc9d9d5b4 (15)
+[2015-09-16 12:26:29,802: INFO/MainProcess] Received task: project.worker.tasks.find_match[8d2c44b9-2f5d-4f65-b18d-af993b15de92]
+[2015-09-16 12:26:29,804: WARNING/Worker-1] INSIDE FUZZZZZZZZY
+[2015-09-16 12:26:29,805: WARNING/Worker-1] Loading Data...
+[2015-09-16 12:26:29,814: INFO/MainProcess] Received task: project.worker.tasks.find_match[ee759dec-2ec1-4070-8973-27bddc1e548e]
+[2015-09-16 12:26:29,816: WARNING/Worker-2] INSIDE FUZZZZZZZZY
+[2015-09-16 12:26:29,816: WARNING/Worker-2] Loading Data...
+[2015-09-16 12:26:29,817: WARNING/Worker-1] Loaded Data!
+[2015-09-16 12:26:29,820: WARNING/Worker-2] Loaded Data!
+[2015-09-16 12:26:29,821: WARNING/Worker-1] START
+[2015-09-16 12:26:29,823: WARNING/Worker-2] START
+[2015-09-16 12:26:29,825: WARNING/Worker-2] *****************
+[2015-09-16 12:26:29,825: WARNING/Worker-2] Union Defence Force
+[2015-09-16 12:26:29,825: WARNING/Worker-2] {'defence', 'union defence force', 'force'}
+[2015-09-16 12:26:29,825: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:29,825: WARNING/Worker-2] ['%defence%', '%union defence force%', '%force%', '%union defence force%']
+[2015-09-16 12:26:29,834: WARNING/Worker-1] *****************
+[2015-09-16 12:26:29,834: WARNING/Worker-1] Union Defence Force
+[2015-09-16 12:26:29,834: WARNING/Worker-1] {'defence', 'union defence force', 'force'}
+[2015-09-16 12:26:29,835: WARNING/Worker-1] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s or lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:29,835: WARNING/Worker-1] ['%defence%', '%union defence force%', '%force%', '%union defence force%']
+[2015-09-16 12:26:29,980: ERROR/MainProcess] Task project.worker.tasks.find_match[8d2c44b9-2f5d-4f65-b18d-af993b15de92] raised unexpected: DatabaseError('error with no message from the libpq',)
+Traceback (most recent call last):
+  File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/karen-bajador/Projects/flask_project/dms/project/worker/tasks.py", line 20, in find_match
+    proceed = f.start()
+  File "/home/karen-bajador/Projects/flask_project/dms/project/fuzzy/fuzzy.py", line 43, in start
+    crm_results = postgres_interface_cls.get_record_match(company_name, company_keywords_list, self.country,  self.territory)
+  File "/home/karen-bajador/Projects/flask_project/dms/project/fuzzy/postgres_interface.py", line 41, in get_record_match
+    cur.execute(sql,list('%{}%'.format(keyword) for keyword in company_keywords_list if len(keyword) > 2) + ['%{}%'.format(company_name)])
+psycopg2.DatabaseError: error with no message from the libpq
+[2015-09-16 12:26:30,057: ERROR/MainProcess] Task project.worker.tasks.find_match[cf1c1b8c-c6b3-484f-b927-48dbc9d9d5b4] raised unexpected: Terminated(15,)
+Traceback (most recent call last):
+  File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/billiard/pool.py", line 1674, in _set_terminated
+    raise Terminated(-(signum or 0))
+billiard.exceptions.Terminated: 15
+[2015-09-16 12:26:36,128: INFO/MainProcess] Received task: project.worker.tasks.find_match[35294455-abed-4bce-b751-56cdc62cd5be]
+[2015-09-16 12:26:36,130: WARNING/Worker-5] INSIDE FUZZZZZZZZY
+[2015-09-16 12:26:36,130: WARNING/Worker-5] Loading Data...
+[2015-09-16 12:26:36,138: INFO/MainProcess] Received task: project.worker.tasks.find_match[02d56bc0-a428-41c0-911c-9ec1818f8fb5]
+[2015-09-16 12:26:36,140: WARNING/Worker-4] INSIDE FUZZZZZZZZY
+[2015-09-16 12:26:36,140: WARNING/Worker-4] Loading Data...
+[2015-09-16 12:26:36,143: WARNING/Worker-4] Loaded Data!
+[2015-09-16 12:26:36,145: WARNING/Worker-5] Loaded Data!
+[2015-09-16 12:26:36,148: WARNING/Worker-4] START
+[2015-09-16 12:26:36,149: WARNING/Worker-5] START
+[2015-09-16 12:26:36,150: WARNING/Worker-4] *****************
+[2015-09-16 12:26:36,150: WARNING/Worker-4] Union Defence Force
+[2015-09-16 12:26:36,150: WARNING/Worker-4] {'defence', 'union defence force', 'force'}
+[2015-09-16 12:26:36,150: WARNING/Worker-4] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:36,151: WARNING/Worker-4] ['%defence%', '%union defence force%', '%force%', '%union defence force%']
+[2015-09-16 12:26:36,206: WARNING/Worker-5] *****************
+[2015-09-16 12:26:36,206: WARNING/Worker-5] Union Defence Force
+[2015-09-16 12:26:36,206: WARNING/Worker-5] {'defence', 'union defence force', 'force'}
+[2015-09-16 12:26:36,207: WARNING/Worker-5] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s or lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:36,207: WARNING/Worker-5] ['%defence%', '%union defence force%', '%force%', '%union defence force%']
+[2015-09-16 12:26:36,299: WARNING/Worker-4] crm_results: [(3122826, 'Force 10 Group', 498899), (87957, 'Armed Forces Officers Club', None), (3498202, 'Reinforcement Human Resource Consultants', 1515950), (1586529, 'Hi-Force FZCO', 0), (2626201, 'Hi Force', None), (3484048, 'UAE Armed Forces (GHQ)', None), (3493352, 'Tech Force Technical Services', 1622559), (3355612, 'Ministry Of Defence', 0), (3473645, 'Hyder force', 1526448), (93361, 'nForce Human Resources Consultancy', 359598), (3451057, 'Pentaforce General Contracting', None), (3496526, 'G force arts', None), (24792, 'Stableforce Trading', None), (3510969, 'Europe Strong Force Post Tensioning L.L.C', None), (3122064, 'Directorate General of Dubai Civil Defence', 1050742)]
+[2015-09-16 12:26:36,300: WARNING/Worker-4] 75 => best_match: Match(crm_company_id=2626201, crm_company_name='Hi Force', crm_group_id=None, score=75)
+[2015-09-16 12:26:36,338: WARNING/Worker-4] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:57: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['Match Status'][int(index)]=str(best_score)
+[2015-09-16 12:26:36,367: WARNING/Worker-4] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:58: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Company Name'][int(index)]=best_match.crm_company_name
+[2015-09-16 12:26:36,378: WARNING/Worker-5] crm_results: [(3122826, 'Force 10 Group', 498899), (87957, 'Armed Forces Officers Club', None), (2626201, 'Hi Force', None), (3484048, 'UAE Armed Forces (GHQ)', None), (3451057, 'Pentaforce General Contracting', None)]
+[2015-09-16 12:26:36,379: WARNING/Worker-5] 75 => best_match: Match(crm_company_id=2626201, crm_company_name='Hi Force', crm_group_id=None, score=75)
+[2015-09-16 12:26:36,406: WARNING/Worker-4] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:59: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Group ID'][int(index)]=best_match.crm_group_id
+[2015-09-16 12:26:36,424: WARNING/Worker-5] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:57: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['Match Status'][int(index)]=str(best_score)
+[2015-09-16 12:26:36,439: WARNING/Worker-4] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:60: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Company ID'][int(index)]=best_match.crm_company_id
+[2015-09-16 12:26:36,440: WARNING/Worker-4] *****************
+[2015-09-16 12:26:36,441: WARNING/Worker-4] Arabtec Holding PJSC
+[2015-09-16 12:26:36,441: WARNING/Worker-4] {'arabtec', 'arabtec holding'}
+[2015-09-16 12:26:36,441: WARNING/Worker-4] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:36,441: WARNING/Worker-4] ['%arabtec%', '%arabtec holding%', '%arabtec holding pjsc%']
+[2015-09-16 12:26:36,457: WARNING/Worker-5] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:58: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Company Name'][int(index)]=best_match.crm_company_name
+[2015-09-16 12:26:36,490: WARNING/Worker-5] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:59: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Group ID'][int(index)]=best_match.crm_group_id
+[2015-09-16 12:26:36,524: WARNING/Worker-5] /home/karen-bajador/Projects/flask_project/dms/project/fuzzy/data_frame.py:60: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._new_df['CRM Company ID'][int(index)]=best_match.crm_company_id
+[2015-09-16 12:26:36,534: WARNING/Worker-5] *****************
+[2015-09-16 12:26:36,535: WARNING/Worker-5] Arabtec Holding PJSC
+[2015-09-16 12:26:36,535: WARNING/Worker-5] {'arabtec', 'arabtec holding'}
+[2015-09-16 12:26:36,535: WARNING/Worker-5] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:36,535: WARNING/Worker-5] ['%arabtec%', '%arabtec holding%', '%arabtec holding pjsc%']
+[2015-09-16 12:26:36,569: WARNING/Worker-4] crm_results: [(89949, 'Arabtec AUH', 1713303)]
+[2015-09-16 12:26:36,569: WARNING/Worker-4] 81 => best_match: Match(crm_company_id=89949, crm_company_name='Arabtec AUH', crm_group_id=1713303, score=81)
+[2015-09-16 12:26:36,635: WARNING/Worker-2] crm_results: [(89949, 'Arabtec AUH', 1713303)]
+[2015-09-16 12:26:36,635: WARNING/Worker-2] 27 => best_match: Match(crm_company_id=89949, crm_company_name='Arabtec AUH', crm_group_id=1713303, score=27)
+[2015-09-16 12:26:36,692: WARNING/Worker-4] *****************
+[2015-09-16 12:26:36,693: WARNING/Worker-4] Al Jaber Transport & General Contracting Llc
+[2015-09-16 12:26:36,693: WARNING/Worker-4] {'jaber', 'al jaber transport & general contracting'}
+[2015-09-16 12:26:36,693: WARNING/Worker-4] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:36,693: WARNING/Worker-4] ['%jaber%', '%al jaber transport & general contracting%', '%al jaber transport & general contracting llc%']
+[2015-09-16 12:26:36,758: WARNING/Worker-2] *****************
+[2015-09-16 12:26:36,759: WARNING/Worker-2] Arabtec Holding PJSC
+[2015-09-16 12:26:36,759: WARNING/Worker-2] {'arabtec', 'arabtec holding'}
+[2015-09-16 12:26:36,759: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:36,759: WARNING/Worker-2] ['%arabtec%', '%arabtec holding%', '%arabtec holding pjsc%']
+[2015-09-16 12:26:36,832: WARNING/Worker-4] crm_results: [(542493, "ALEC - Al Jaber Legt Eng'g & Contracting", 646549), (89867, 'Al Jaber Group LLC', 21232), (3446123, 'Al Jaber Aviation', None), (3474441, 'Al Jaber Energy Services', None), (314366, 'Al Jaber Trading / Al Jaber Optical', 540699)]
+[2015-09-16 12:26:36,832: WARNING/Worker-4] 64 => best_match: Match(crm_company_id=3446123, crm_company_name='Al Jaber Aviation', crm_group_id=None, score=64)
+[2015-09-16 12:26:36,937: WARNING/Worker-2] crm_results: [(89949, 'Arabtec AUH', 1713303)]
+[2015-09-16 12:26:36,937: WARNING/Worker-2] 81 => best_match: Match(crm_company_id=89949, crm_company_name='Arabtec AUH', crm_group_id=1713303, score=81)
+[2015-09-16 12:26:36,958: WARNING/Worker-4] *****************
+[2015-09-16 12:26:36,958: WARNING/Worker-4] Arabian Construction Company - W L L
+[2015-09-16 12:26:36,958: WARNING/Worker-4] {'arabian construction company w l l'}
+[2015-09-16 12:26:36,959: WARNING/Worker-4] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:36,959: WARNING/Worker-4] ['%arabian construction company w l l%', '%arabian construction company w l l%']
+[2015-09-16 12:26:37,043: WARNING/Worker-4] crm_results: []
+[2015-09-16 12:26:37,043: WARNING/Worker-4] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 12:26:37,085: WARNING/Worker-2] *****************
+[2015-09-16 12:26:37,085: WARNING/Worker-2] Al Jaber Transport & General Contracting Llc
+[2015-09-16 12:26:37,086: WARNING/Worker-2] {'jaber', 'al jaber transport & general contracting'}
+[2015-09-16 12:26:37,086: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:37,086: WARNING/Worker-2] ['%jaber%', '%al jaber transport & general contracting%', '%al jaber transport & general contracting llc%']
+[2015-09-16 12:26:37,174: WARNING/Worker-4] *****************
+[2015-09-16 12:26:37,174: WARNING/Worker-4] Abu Dhabi Group
+[2015-09-16 12:26:37,175: WARNING/Worker-4] {'abu dhabi group'}
+[2015-09-16 12:26:37,175: WARNING/Worker-4] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:37,175: WARNING/Worker-4] ['%abu dhabi group%', '%abu dhabi group%']
+[2015-09-16 12:26:37,217: WARNING/Worker-4] crm_results: [(542493, "ALEC - Al Jaber Legt Eng'g & Contracting", 646549), (89867, 'Al Jaber Group LLC', 21232), (3446123, 'Al Jaber Aviation', None), (3474441, 'Al Jaber Energy Services', None), (314366, 'Al Jaber Trading / Al Jaber Optical', 540699)]
+[2015-09-16 12:26:37,218: WARNING/Worker-4] 66 => best_match: Match(crm_company_id=89867, crm_company_name='Al Jaber Group LLC', crm_group_id=21232, score=66)
+[2015-09-16 12:26:37,296: WARNING/Worker-2] crm_results: []
+[2015-09-16 12:26:37,296: WARNING/Worker-2] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 12:26:37,351: WARNING/Worker-4] *****************
+[2015-09-16 12:26:37,351: WARNING/Worker-4] EMKE Group LLC
+[2015-09-16 12:26:37,351: WARNING/Worker-4] {'emke group', 'emke'}
+[2015-09-16 12:26:37,351: WARNING/Worker-4] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:37,352: WARNING/Worker-4] ['%emke group%', '%emke%', '%emke group llc%']
+[2015-09-16 12:26:37,431: WARNING/Worker-2] *****************
+[2015-09-16 12:26:37,431: WARNING/Worker-2] Arabian Construction Company - W L L
+[2015-09-16 12:26:37,431: WARNING/Worker-2] {'arabian construction company w l l'}
+[2015-09-16 12:26:37,431: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:37,431: WARNING/Worker-2] ['%arabian construction company w l l%', '%arabian construction company w l l%']
+[2015-09-16 12:26:37,487: WARNING/Worker-2] crm_results: []
+[2015-09-16 12:26:37,487: WARNING/Worker-2] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 12:26:37,559: WARNING/Worker-4] crm_results: []
+[2015-09-16 12:26:37,559: WARNING/Worker-4] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 12:26:37,615: WARNING/Worker-2] *****************
+[2015-09-16 12:26:37,615: WARNING/Worker-2] Abu Dhabi Group
+[2015-09-16 12:26:37,615: WARNING/Worker-2] {'abu dhabi group'}
+[2015-09-16 12:26:37,615: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:37,615: WARNING/Worker-2] ['%abu dhabi group%', '%abu dhabi group%']
+[2015-09-16 12:26:37,691: WARNING/Worker-4] *****************
+[2015-09-16 12:26:37,691: WARNING/Worker-4] National Central Cooling Co PSC
+[2015-09-16 12:26:37,691: WARNING/Worker-4] {'cooling', 'national central cooling'}
+[2015-09-16 12:26:37,691: WARNING/Worker-4] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:37,691: WARNING/Worker-4] ['%cooling%', '%national central cooling%', '%national central cooling co psc%']
+[2015-09-16 12:26:37,700: WARNING/Worker-4] crm_results: []
+[2015-09-16 12:26:37,700: WARNING/Worker-4] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 12:26:37,814: WARNING/Worker-2] crm_results: [(3039209, 'Dolphin Radiators & Cooling Systems LLC', None), (541283, 'District Cooling Company', 606449), (62846, 'Tabreed, National Central Cooling Co. (PJSC)', 506599), (58262, 'Electro Cooling Center LLC', None), (3399977, 'Abraj Cooling', None), (3464556, 'Gea Polacel Cooling Towers Fzco', 0)]
+[2015-09-16 12:26:37,815: WARNING/Worker-2] 40 => best_match: Match(crm_company_id=62846, crm_company_name='Tabreed, National Central Cooling Co. (PJSC)', crm_group_id=506599, score=40)
+[2015-09-16 12:26:37,817: WARNING/Worker-4] *****************
+[2015-09-16 12:26:37,817: WARNING/Worker-4] Abu Dhabi Water & Electricity Authority
+[2015-09-16 12:26:37,817: WARNING/Worker-4] {'electricity', 'abu dhabi water & electricity authority'}
+[2015-09-16 12:26:37,817: WARNING/Worker-4] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:37,817: WARNING/Worker-4] ['%electricity%', '%abu dhabi water & electricity authority%', '%abu dhabi water & electricity authority%']
+[2015-09-16 12:26:37,941: WARNING/Worker-2] *****************
+[2015-09-16 12:26:37,941: WARNING/Worker-2] EMKE Group LLC
+[2015-09-16 12:26:37,941: WARNING/Worker-2] {'emke group', 'emke'}
+[2015-09-16 12:26:37,941: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:37,941: WARNING/Worker-2] ['%emke group%', '%emke%', '%emke group llc%']
+[2015-09-16 12:26:37,987: WARNING/Worker-4] crm_results: [(1257565, 'electricity de france (edf)', 0), (541243, 'Federal Electricity and Water Authority (FEWA)', 629449), (23998, 'Dubai Electricity and Water Authority Dewa', 138967), (3399931, 'Elster Electricity Company', 0), (3403491, 'Sharjah Electricity and Water Authority', 0), (27162, 'Abu Dhabi Water and Electricity Authority', 89901)]
+[2015-09-16 12:26:37,988: WARNING/Worker-4] 92 => best_match: Match(crm_company_id=27162, crm_company_name='Abu Dhabi Water and Electricity Authority', crm_group_id=89901, score=92)
+[2015-09-16 12:26:38,086: WARNING/Worker-5] crm_results: []
+[2015-09-16 12:26:38,087: WARNING/Worker-5] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 12:26:38,108: WARNING/Worker-4] *****************
+[2015-09-16 12:26:38,108: WARNING/Worker-4] Al Jaber Group LLC
+[2015-09-16 12:26:38,108: WARNING/Worker-4] {'jaber', 'al jaber group'}
+[2015-09-16 12:26:38,108: WARNING/Worker-4] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:38,108: WARNING/Worker-4] ['%jaber%', '%al jaber group%', '%al jaber group llc%']
+[2015-09-16 12:26:38,223: WARNING/Worker-5] *****************
+[2015-09-16 12:26:38,223: WARNING/Worker-5] Al Jaber Transport & General Contracting Llc
+[2015-09-16 12:26:38,223: WARNING/Worker-5] {'jaber', 'al jaber transport & general contracting'}
+[2015-09-16 12:26:38,223: WARNING/Worker-5] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:38,223: WARNING/Worker-5] ['%jaber%', '%al jaber transport & general contracting%', '%al jaber transport & general contracting llc%']
+[2015-09-16 12:26:38,240: WARNING/Worker-2] crm_results: [(542493, "ALEC - Al Jaber Legt Eng'g & Contracting", 646549), (89867, 'Al Jaber Group LLC', 21232), (3446123, 'Al Jaber Aviation', None), (3474441, 'Al Jaber Energy Services', None), (314366, 'Al Jaber Trading / Al Jaber Optical', 540699)]
+[2015-09-16 12:26:38,240: WARNING/Worker-2] 78 => best_match: Match(crm_company_id=89867, crm_company_name='Al Jaber Group LLC', crm_group_id=21232, score=78)
+[2015-09-16 12:26:38,305: WARNING/Worker-5] crm_results: [(89867, 'Al Jaber Group LLC', 21232), (3446123, 'Al Jaber Aviation', None), (3474441, 'Al Jaber Energy Services', None)]
+[2015-09-16 12:26:38,305: WARNING/Worker-5] 64 => best_match: Match(crm_company_id=3446123, crm_company_name='Al Jaber Aviation', crm_group_id=None, score=64)
+[2015-09-16 12:26:38,361: WARNING/Worker-2] *****************
+[2015-09-16 12:26:38,362: WARNING/Worker-2] National Central Cooling Co PSC
+[2015-09-16 12:26:38,362: WARNING/Worker-2] {'cooling', 'national central cooling'}
+[2015-09-16 12:26:38,362: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:38,362: WARNING/Worker-2] ['%cooling%', '%national central cooling%', '%national central cooling co psc%']
+[2015-09-16 12:26:38,436: WARNING/Worker-5] *****************
+[2015-09-16 12:26:38,437: WARNING/Worker-5] Arabian Construction Company - W L L
+[2015-09-16 12:26:38,437: WARNING/Worker-5] {'arabian construction company w l l'}
+[2015-09-16 12:26:38,437: WARNING/Worker-5] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:38,437: WARNING/Worker-5] ['%arabian construction company w l l%', '%arabian construction company w l l%']
+[2015-09-16 12:26:38,500: WARNING/Worker-5] crm_results: [(3039209, 'Dolphin Radiators & Cooling Systems LLC', None), (541283, 'District Cooling Company', 606449), (62846, 'Tabreed, National Central Cooling Co. (PJSC)', 506599), (58262, 'Electro Cooling Center LLC', None), (3399977, 'Abraj Cooling', None), (3464556, 'Gea Polacel Cooling Towers Fzco', 0)]
+[2015-09-16 12:26:38,501: WARNING/Worker-5] 66 => best_match: Match(crm_company_id=541283, crm_company_name='District Cooling Company', crm_group_id=606449, score=66)
+[2015-09-16 12:26:38,550: WARNING/Worker-4] crm_results: []
+[2015-09-16 12:26:38,550: WARNING/Worker-4] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 12:26:38,637: WARNING/Worker-5] *****************
+[2015-09-16 12:26:38,637: WARNING/Worker-5] Abu Dhabi Group
+[2015-09-16 12:26:38,638: WARNING/Worker-5] {'abu dhabi group'}
+[2015-09-16 12:26:38,638: WARNING/Worker-5] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:38,638: WARNING/Worker-5] ['%abu dhabi group%', '%abu dhabi group%']
+[2015-09-16 12:26:38,689: INFO/MainProcess] Task project.worker.tasks.find_match[02d56bc0-a428-41c0-911c-9ec1818f8fb5] succeeded in 2.5496804819995305s: None
+[2015-09-16 12:26:38,705: WARNING/Worker-5] crm_results: []
+[2015-09-16 12:26:38,705: WARNING/Worker-5] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 12:26:38,840: WARNING/Worker-5] *****************
+[2015-09-16 12:26:38,840: WARNING/Worker-5] EMKE Group LLC
+[2015-09-16 12:26:38,840: WARNING/Worker-5] {'emke group', 'emke'}
+[2015-09-16 12:26:38,840: WARNING/Worker-5] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:38,840: WARNING/Worker-5] ['%emke group%', '%emke%', '%emke group llc%']
+[2015-09-16 12:26:38,916: WARNING/Worker-2] crm_results: []
+[2015-09-16 12:26:38,916: WARNING/Worker-2] 0 => best_match: Match(crm_company_id='', crm_company_name='', crm_group_id='', score='')
+[2015-09-16 12:26:39,042: WARNING/Worker-2] *****************
+[2015-09-16 12:26:39,042: WARNING/Worker-2] Abu Dhabi Water & Electricity Authority
+[2015-09-16 12:26:39,042: WARNING/Worker-2] {'electricity', 'abu dhabi water & electricity authority'}
+[2015-09-16 12:26:39,042: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:39,042: WARNING/Worker-2] ['%electricity%', '%abu dhabi water & electricity authority%', '%abu dhabi water & electricity authority%']
+[2015-09-16 12:26:39,169: WARNING/Worker-5] crm_results: [(1257565, 'electricity de france (edf)', 0), (541243, 'Federal Electricity and Water Authority (FEWA)', 629449), (23998, 'Dubai Electricity and Water Authority Dewa', 138967), (3399931, 'Elster Electricity Company', 0), (3403491, 'Sharjah Electricity and Water Authority', 0), (27162, 'Abu Dhabi Water and Electricity Authority', 89901)]
+[2015-09-16 12:26:39,170: WARNING/Worker-5] 42 => best_match: Match(crm_company_id=3399931, crm_company_name='Elster Electricity Company', crm_group_id=0, score=42)
+[2015-09-16 12:26:39,298: WARNING/Worker-5] *****************
+[2015-09-16 12:26:39,299: WARNING/Worker-5] National Central Cooling Co PSC
+[2015-09-16 12:26:39,299: WARNING/Worker-5] {'cooling', 'national central cooling'}
+[2015-09-16 12:26:39,299: WARNING/Worker-5] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:39,299: WARNING/Worker-5] ['%cooling%', '%national central cooling%', '%national central cooling co psc%']
+[2015-09-16 12:26:39,349: INFO/MainProcess] Terminating 35294455-abed-4bce-b751-56cdc62cd5be (15)
+[2015-09-16 12:26:39,387: WARNING/Worker-2] crm_results: [(62846, 'Tabreed, National Central Cooling Co. (PJSC)', 506599), (58262, 'Electro Cooling Center LLC', None), (3399977, 'Abraj Cooling', None)]
+[2015-09-16 12:26:39,387: WARNING/Worker-2] 43 => best_match: Match(crm_company_id=58262, crm_company_name='Electro Cooling Center LLC', crm_group_id=None, score=43)
+[2015-09-16 12:26:39,509: WARNING/Worker-2] *****************
+[2015-09-16 12:26:39,509: WARNING/Worker-2] Al Jaber Group LLC
+[2015-09-16 12:26:39,509: WARNING/Worker-2] {'jaber', 'al jaber group'}
+[2015-09-16 12:26:39,509: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:26:39,509: WARNING/Worker-2] ['%jaber%', '%al jaber group%', '%al jaber group llc%']
+[2015-09-16 12:26:39,661: WARNING/Worker-2] crm_results: [(542493, "ALEC - Al Jaber Legt Eng'g & Contracting", 646549), (89867, 'Al Jaber Group LLC', 21232), (3446123, 'Al Jaber Aviation', None), (3474441, 'Al Jaber Energy Services', None), (314366, 'Al Jaber Trading / Al Jaber Optical', 540699)]
+[2015-09-16 12:26:39,662: WARNING/Worker-2] 100 => best_match: Match(crm_company_id=89867, crm_company_name='Al Jaber Group LLC', crm_group_id=21232, score=100)
+[2015-09-16 12:26:39,782: INFO/MainProcess] Task project.worker.tasks.find_match[ee759dec-2ec1-4070-8973-27bddc1e548e] succeeded in 9.966335904999141s: None
+[2015-09-16 12:27:00,481: INFO/MainProcess] Received task: project.worker.tasks.find_match[2b5dd8b2-2841-47d6-924c-bee96c5ab892]
+[2015-09-16 12:27:00,483: WARNING/Worker-1] INSIDE FUZZZZZZZZY
+[2015-09-16 12:27:00,483: WARNING/Worker-1] Loading Data...
+[2015-09-16 12:27:00,496: WARNING/Worker-1] Loaded Data!
+[2015-09-16 12:27:00,501: INFO/MainProcess] Received task: project.worker.tasks.find_match[6482e9f0-ae59-49b1-a7df-c2d294633de9]
+[2015-09-16 12:27:00,502: WARNING/Worker-1] START
+[2015-09-16 12:27:00,503: WARNING/Worker-1] *****************
+[2015-09-16 12:27:00,504: WARNING/Worker-1] Union Defence Force
+[2015-09-16 12:27:00,504: WARNING/Worker-1] {'defence', 'union defence force', 'force'}
+[2015-09-16 12:27:00,504: WARNING/Worker-1] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi') and ((lower(company_name) like %s or lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:27:00,504: WARNING/Worker-1] ['%defence%', '%union defence force%', '%force%', '%union defence force%']
+[2015-09-16 12:27:00,507: WARNING/Worker-2] INSIDE FUZZZZZZZZY
+[2015-09-16 12:27:00,507: WARNING/Worker-2] Loading Data...
+[2015-09-16 12:27:00,518: WARNING/Worker-2] Loaded Data!
+[2015-09-16 12:27:00,525: WARNING/Worker-2] START
+[2015-09-16 12:27:00,526: WARNING/Worker-2] *****************
+[2015-09-16 12:27:00,526: WARNING/Worker-2] Union Defence Force
+[2015-09-16 12:27:00,527: WARNING/Worker-2] {'defence', 'union defence force', 'force'}
+[2015-09-16 12:27:00,527: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:27:00,527: WARNING/Worker-2] ['%defence%', '%union defence force%', '%force%', '%union defence force%']
+[2015-09-16 12:27:00,530: ERROR/MainProcess] Task project.worker.tasks.find_match[35294455-abed-4bce-b751-56cdc62cd5be] raised unexpected: Terminated(15,)
+Traceback (most recent call last):
+  File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/billiard/pool.py", line 1674, in _set_terminated
+    raise Terminated(-(signum or 0))
+billiard.exceptions.Terminated: 15
+[2015-09-16 12:27:00,673: WARNING/Worker-2] crm_results: [(3122826, 'Force 10 Group', 498899), (87957, 'Armed Forces Officers Club', None), (3498202, 'Reinforcement Human Resource Consultants', 1515950), (1586529, 'Hi-Force FZCO', 0), (2626201, 'Hi Force', None), (3484048, 'UAE Armed Forces (GHQ)', None), (3493352, 'Tech Force Technical Services', 1622559), (3355612, 'Ministry Of Defence', 0), (3473645, 'Hyder force', 1526448), (93361, 'nForce Human Resources Consultancy', 359598), (3451057, 'Pentaforce General Contracting', None), (3496526, 'G force arts', None), (24792, 'Stableforce Trading', None), (3510969, 'Europe Strong Force Post Tensioning L.L.C', None), (3122064, 'Directorate General of Dubai Civil Defence', 1050742)]
+[2015-09-16 12:27:00,674: WARNING/Worker-2] 75 => best_match: Match(crm_company_id=2626201, crm_company_name='Hi Force', crm_group_id=None, score=75)
+[2015-09-16 12:27:00,791: WARNING/Worker-2] *****************
+[2015-09-16 12:27:00,791: WARNING/Worker-2] Arabtec Holding PJSC
+[2015-09-16 12:27:00,791: WARNING/Worker-2] {'arabtec', 'arabtec holding'}
+[2015-09-16 12:27:00,791: WARNING/Worker-2] select company_id, company_name, group_id from crm.company_denorm_info where country = 'ae' and territory in ('Abu Dhabi','Dubai') and ((lower(company_name) like %s or lower(company_name) like %s) OR lower(company_name) like %s)
+[2015-09-16 12:27:00,791: WARNING/Worker-2] ['%arabtec%', '%arabtec holding%', '%arabtec holding pjsc%']
+[2015-09-16 12:27:00,922: ERROR/MainProcess] Task project.worker.tasks.find_match[2b5dd8b2-2841-47d6-924c-bee96c5ab892] raised unexpected: DatabaseError('error with no message from the libpq',)
+Traceback (most recent call last):
+  File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/karen-bajador/Projects/flask_project/dms/project/worker/tasks.py", line 20, in find_match
+    proceed = f.start()
+  File "/home/karen-bajador/Projects/flask_project/dms/project/fuzzy/fuzzy.py", line 43, in start
+    crm_results = postgres_interface_cls.get_record_match(company_name, company_keywords_list, self.country,  self.territory)
+  File "/home/karen-bajador/Projects/flask_project/dms/project/fuzzy/postgres_interface.py", line 41, in get_record_match
+    cur.execute(sql,list('%{}%'.format(keyword) for keyword in company_keywords_list if len(keyword) > 2) + ['%{}%'.format(company_name)])
+psycopg2.DatabaseError: error with no message from the libpq
+[2015-09-16 12:30:50,179: WARNING/MainProcess] Error in atexit._run_exitfuncs:
+[2015-09-16 12:30:50,180: WARNING/MainProcess] Traceback (most recent call last):
+[2015-09-16 12:30:50,180: WARNING/MainProcess] File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/multiprocessing/util.py", line 252, in _run_finalizers
+[2015-09-16 12:30:50,204: WARNING/MainProcess] finalizer()
+[2015-09-16 12:30:50,204: WARNING/MainProcess] File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/multiprocessing/util.py", line 185, in __call__
+[2015-09-16 12:30:50,204: WARNING/MainProcess] res = self._callback(*self._args, **self._kwargs)
+[2015-09-16 12:30:50,204: WARNING/MainProcess] File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/billiard/pool.py", line 1600, in _terminate_pool
+[2015-09-16 12:30:50,205: WARNING/MainProcess] p.join()
+[2015-09-16 12:30:50,205: WARNING/MainProcess] File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/billiard/process.py", line 153, in join
+[2015-09-16 12:30:50,219: WARNING/MainProcess] res = self._popen.wait(timeout)
+[2015-09-16 12:30:50,219: WARNING/MainProcess] File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/billiard/forking.py", line 157, in wait
+[2015-09-16 12:30:50,229: WARNING/MainProcess] return self.poll(os.WNOHANG if timeout == 0.0 else 0)
+[2015-09-16 12:30:50,229: WARNING/MainProcess] File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/billiard/forking.py", line 137, in poll
+[2015-09-16 12:30:50,229: WARNING/MainProcess] pid, sts = os.waitpid(self.pid, flag)
+[2015-09-16 12:30:50,229: WARNING/MainProcess] File "/home/karen-bajador/anaconda/envs/dms/lib/python3.4/site-packages/celery/apps/worker.py", line 293, in _handle_request
+[2015-09-16 12:30:50,236: WARNING/MainProcess] raise exc()
+[2015-09-16 12:30:50,236: WARNING/MainProcess] celery.exceptions
+[2015-09-16 12:30:50,236: WARNING/MainProcess] .
+[2015-09-16 12:30:50,236: WARNING/MainProcess] WorkerTerminate
