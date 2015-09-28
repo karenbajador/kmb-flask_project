@@ -12,7 +12,6 @@ import os
 import pandas as pd
 from project.worker.tasks import app, find_match
 import csv
-import urllib.request
 import requests
 import re
 import ast
