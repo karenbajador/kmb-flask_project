@@ -19,6 +19,8 @@
   
     function open (size) {
 
+      console.log('open function called!')
+
       var modalInstance = $modal.open({
         animation: vm.animationsEnabled,
         templateUrl: 'myModalContent.html',

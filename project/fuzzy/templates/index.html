@@ -4,98 +4,45 @@
 
 
 <!-- <div class="body-content"> -->
-	<div class="body-content" ng-app="fuzzy" ng-controller="fuzzyController as fuzzy">
-  <div class="row">
-    <!-- <h1>Welcome!</h1> -->
-	<ul class="nav nav-tabs">
-	  <li role="presentation" class="active"><a href="#">Home</a></li>
-	</ul>
+	
+
+<ol class="breadcrumb">
+    <li><a href="#">Home</a>
+    </li>
+    <li><a href="#">Fuzzy Match</a>
+</ol>
 
 
-	<div class="panel panel-default">
+ <div class="body-content" ng-app="fuzzy" ng-controller="fuzzyController as fuzzy">
 
-
-
-		 <div class="panel-body">
-
-		 Home > Fuzzy Match	
-	 
-		<!-- <h1>Fuzzy Match</h1> -->
-
-		    <!-- <div class="col-lg-6 col-sm-6 col-12"> -->
-
-
-		    <div>
-            <h4>Upload spreadsheet</h4>
-            <form id="frmFuzzy" name="frmFuzzy" role="form" ng-submit="fuzzy.submit()">
-
-            <div class="input-group">
-                <input id="fuzzy_files" name="fuzzy_files" type="file" multiple="" ngf-select="fuzzy.uploadFiles($files)" ng-model="fuzzy.filesToUpload">
-    
-            </div>
-            <span class="help-block">
-                <!-- Try selecting one or more files and watch the feedback -->
-
-            </span>
-
-      			 <div>
-                   <div class="col-lg-10 col-md-10 col-sm-10">
-            			  {% include 'files_selected.html' %}
-            				{{errorMsg}} 
+                <div class="col-md-12">
+                <div class="panel with-nav-tabs panel-info">
+                    <div class="panel-heading no-padding">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#uploadFiles" data-toggle="tab">Upload Files</a></li>
+                                <li><a href="#processedFiles" data-toggle="tab">Processed Files</a></li>
+                               
+                            </ul>
                     </div>
-      			
 
-                    <div class="col-lg-2 col-md-2 col-sm-2" ng-if="fuzzy.filesNotEmpty">
-                  {% raw %}
-                  <button type="button" ng-click="fuzzy.submit()" class="btn btn-primary" ng-disabled="fuzzy.btn_fuzzy_disabled || frmFuzzy.$invalid">
-                    <span ng-bind="fuzzy.btn_label"></span></button>
-              <!--     <button type="submit" class="btn btn-primary" ng-disabled="fuzzy.btn_fuzzy_disabled || frmFuzzy.$invalid">
-                    <span ng-bind="fuzzy.btn_label"></span></button> -->
-                    <br/><br/>
-                    <div ng-controller="ModalDemoCtrl as mod">
-                      <script type="text/ng-template" id="myModalContent.html">
-                          <div class="modal-header">
-                              <h3 class="modal-title">Im a modal!</h3>
-                              </div>
-                          <div class="modal-body">
-                             Hi there...
-                             
-                          </div>
-                          <div class="modal-footer">
-                              <button class="btn btn-primary" type="button" ng-click="mod.cancel()">OK</button>
-                              <button class="btn btn-warning" type="button" ng-click="mod.close()">Cancel</button>
-                          </div>
-                      </script>
-                        <button type="button" ng-click="mod.open('sm')" class="btn btn-primary" ng-disabled="fuzzy.btn_sendcrm_disabled">Send to CRM</button>
-                    <div>
-                
-                 
-                  
 
-                  {% endraw %}
-                  
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            
+                            <div class="tab-pane fade in active" id="uploadFiles">
+                                {% include 'upload_files.html' %}
+                            </div>
+                            
+                            <div class="tab-pane fade" id="processedFiles">
+                                {% include 'processed_files.html' %}
+                            </div>
+
+                        </div>
                     </div>
-            </div>
-
-
-             </form>
-
-        </div>
-
-           
-
-
-		</div>
-
-	</div>	
-
-
-  </div>
-
-
-
-    
-
+                </div>
+              </div>
+      
+            
 </div>
 
 

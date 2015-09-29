@@ -1,0 +1,49 @@
+
+<h4 class="page-header">Upload spreadsheet</h4>
+      <form id="frmFuzzy" name="frmFuzzy" role="form" ng-submit="fuzzy.submit()">
+        <div class="input-group">
+          <input id="fuzzy_files" name="fuzzy_files" type="file" multiple="" ngf-select="fuzzy.uploadFiles($files)" ng-model="fuzzy.filesToUpload">
+        </div>
+        <br/><br/>
+        
+        <div>
+              <div class="col-lg-10 col-md-10 col-sm-10">
+                  {% include 'files_selected.html' %}
+                  {{errorMsg}} 
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2" ng-if="fuzzy.filesNotEmpty">
+                 {% raw %}
+                        <button type="button" ng-click="fuzzy.submit()" class="btn btn-primary" ng-disabled="fuzzy.btn_fuzzy_disabled || frmFuzzy.$invalid">
+                          <span ng-bind="fuzzy.btn_label"></span>
+                        </button>
+                        <br/><br/>
+                        
+
+                        <div ng-controller="ModalDemoCtrl as mod">
+                            <button type="button" ng-click="mod.open('sm')" class="btn btn-primary" ng-disabled="fuzzy.btn_sendcrm_disabled">
+                              Send to CRM
+                            </button>
+                            <script type="text/ng-template" id="myModalContent.html">
+                                <div class="modal-header">
+                                    <h3 class="modal-title">Im a modal!</h3>
+                                    </div>
+                                <div class="modal-body">
+                                   Hi there...
+                                   
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" type="button" ng-click="mod.close()">Send</button>
+                                    <button class="btn btn-warning" type="button" ng-click="mod.cancel()">Cancel</button>
+                                </div>
+                            </script>
+                        </div>
+
+                 {% endraw %}
+              </div>  
+        </div>      
+
+
+          
+
+
+      </form>

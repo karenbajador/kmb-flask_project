@@ -21,6 +21,12 @@ from flask.ext.assets import Environment, Bundle
 ################
 
 app = Flask(__name__)
+
+print("*******************************")
+import sys
+print(sys.path)
+print("*******************************")
+
 app.config.from_object(os.environ['APP_SETTINGS'])
 
 
@@ -94,9 +100,11 @@ assets.register('app_fuzzy', fuzzy_app)
 
 
 
-main_css = Bundle('css/main.css', \
+main_css = Bundle(
+    'css/bootstrap.min.css', \
+    'css/main.css', \
 	'js/bower_components/angucomplete-alt/angucomplete-alt.css', \
-    'js/bower_components/angular-bootstrap/ui-bootstrap-csp.css', \
+   'js/bower_components/angular-bootstrap/ui-bootstrap-csp.css', \
                filters='jsmin', output='gen/main.css')
 assets.register('css_all', main_css)
 
