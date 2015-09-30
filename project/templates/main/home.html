@@ -21,29 +21,46 @@
 	    
 
 		<div class="row">
-		  <div class="col-sm-6 col-md-3">
-		    <div class="thumbnail">
-		      <!-- <img src="..." alt="..."> -->
-		      <img src="{{ url_for('static', filename = 'images/fuzzy.jpg') }}" width="150" height="85">
-		      <div class="caption">
-		        <h3>Fuzzy Match</h3>
-		        <p>Fuzzy match list of companies from spreadsheet against companies in CRM.</p>
-		        <p><a href="fuzzy" class="btn btn-default" role="button">Start</a></p>
 
-		      </div>
-		    </div>
-		  </div>
+		  	<div class="col-sm-6 col-md-3">
+				<a href="fuzzy" class="btn btn-default col-sm-12 col-md-12 col-lg-12" role="button">
+		      	  	<div>
+			      		<img src="{{ url_for('static', filename = 'images/fuzzy_t.png') }}" width="150" height="150">
+			      		<h3>Fuzzy Match</h3>
+			      	</div>
+				</a>
+				&nbsp;
 
-		  <div class="col-sm-6 col-md-3">
-		    <div class="thumbnail">
-		      <img src="{{ url_for('static', filename = 'images/scrapy.png') }}" width="120" height="85">
-		      <div class="caption">
-		        <h3>Scraped Leads</h3>
-		        <p>Generate leads from raw data scraped from competitor job sites.</p>
-		        <p><a href="#" class="btn btn-default" role="button">Start</a></p>
-		      </div>
-		    </div>
-		  </div>
+				<div class="alert alert-info" role="alert">Generate new records by discovering new companies coming from spreadsheets through fuzzy matching process against existing accounts in CRM.</div>
+			</div>
+
+		  	<div class="col-sm-6 col-md-3">
+				<a href="#" class="btn btn-default col-sm-12 col-md-12 col-lg-12" role="button">
+		      	  	<div>
+			      		<img src="{{ url_for('static', filename = 'images/scrapy.png') }}" width="120" height="150">
+			      		<h3>Scraped Leads</h3>
+			      	</div>
+				</a>
+				&nbsp;
+				<div class="alert alert-info" role="alert">Generate leads from raw data scraped from competitor job sites.</div>
+				
+			</div>	
+
+		  	<div class="col-sm-6 col-md-3">
+				<a href="#" class="btn btn-default col-sm-12 col-md-12 col-lg-12" role="button">
+		      	  	<div>
+			      		<img src="{{ url_for('static', filename = 'images/data_cleaning_t.png') }}" width="150" height="150">
+			      		<h3>CRM Sweep</h3>
+			      	</div>
+				</a>
+				&nbsp;
+				<div class="alert alert-info" role="alert">Track progress in maintaing quality of data in CRM.</div>
+			</div>						
+		 
+
+
+
+		  
 
 
 		</div>

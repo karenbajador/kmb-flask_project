@@ -29,6 +29,23 @@ input[readonly] {
 }
 
 
+
+.alert-info {
+  font-size: 10px;
+  padding: 10;
+}
+
+.wrap {
+  word-wrap: break-word;
+
+}
+
+.10px {
+  font-size: 10px;
+
+}
+
+
 table {
 	/*background-color: yellow;*/
 	width:100%;
